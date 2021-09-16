@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import Logotipo from "@/components/Logotipo";
-import SeparateLine from "@/components/SeparateLine";
+import { Logotipo, SeparateLine } from "@/components/index";
 
 const navLinks = [
   { text: "Home", to: "/" },
@@ -10,7 +9,7 @@ const navLinks = [
   { text: "Blog", to: "/blog" },
 ]
 
-export default function Header() {
+export function Header() {
   const router = useRouter()
   const currentPath = router.pathname
 

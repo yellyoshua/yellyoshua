@@ -4,13 +4,18 @@
 //
 // import { Message } from 'path/to/interfaces';
 
-export type SocialLink = {
+export interface DispatchStore<T> {
+  payload?: Record<string, any>,
+  type: T
+}
+
+export interface SocialLink {
   name: string,
   uniconIcon: string,
   url: string
 }
 
-export type Project = {
+export interface Project {
   imageURL: string,
   name: string,
   description: string,
@@ -19,7 +24,7 @@ export type Project = {
   isExternalLink: boolean,
 }
 
-export type Message = {
+export interface Message {
   date: string | Date,
   author: string,
   isSender: boolean,
@@ -29,6 +34,6 @@ export type Message = {
   attachment?: Attachment
 }
 
-export type Attachment = {
-  fileName: string,
+export interface Attachment {
+  fileName: string
 }

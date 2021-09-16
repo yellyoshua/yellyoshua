@@ -12,7 +12,7 @@ type LogotipoProps = {
   variant?: keyof typeof LOGO_STYLES
 }
 
-export default function Logotipo({ variant }: LogotipoProps) {
+export function Logotipo({ variant }: LogotipoProps) {
   let color = variant ? LOGO_STYLES[variant] : LOGO_STYLES[defaultStyle]
 
   const applyStyle = (): CSSProperties => ({

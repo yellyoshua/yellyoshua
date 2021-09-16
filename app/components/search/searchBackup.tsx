@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { FC, useEffect, useState, } from 'react'
 import { useFormik } from 'formik'
 import { useSafeFetch } from '@/hooks/useSafeFetch'
-import { useAppStore } from '@/store/app'
+import { useAppStore } from '@/flux/store'
 
 type Props = {}
 

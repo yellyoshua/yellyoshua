@@ -4,6 +4,6 @@ type UniconIconProps = {
   className?: string
 }
 
-export default function UniconIcon({ uniconIcon, className }: UniconIconProps) {
+export function UniconIcon({ uniconIcon, className }: UniconIconProps) {
   return uniconIcon.length ? <i className={`${uniconIcon} ${className}`}></i> : null
 }

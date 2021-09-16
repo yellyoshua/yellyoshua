@@ -16,7 +16,7 @@ module.exports = {
     '^@/hooks/(.*)$': resolve(__dirname, './hooks/$1'),
     '^@/enums/(.*)$': resolve(__dirname, './enums/$1'),
     '^@/interfaces/(.*)$': resolve(__dirname, './interfaces/$1'),
-    '^@/store/(.*)$': resolve(__dirname, './store/$1'),
+    '^@/flux/(.*)$': resolve(__dirname, './flux/$1'),
     '^@/ui/(.*)$': resolve(__dirname, './ui/$1'),
     '^@/icons/(.*)$': resolve(__dirname, './icons/$1'),
   },

@@ -13,7 +13,7 @@ type SeparateLineType = {
   borderColor?: string
 }
 
-export default function SeparateLine({ size, className, borderColor }: SeparateLineType) {
+export function SeparateLine({ size, className, borderColor }: SeparateLineType) {
   const lineSize = size ? STYLE_LINE_SIZE[size] : STYLE_LINE_SIZE[defaultSize]
   const lineStyle = `mt-2 mb-6 border-b-2 ${borderColor ? borderColor : "border-gray-500"} ${lineSize} mx-auto`
 

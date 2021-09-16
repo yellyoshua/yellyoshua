@@ -1,14 +1,12 @@
-import { useAppStore } from '@/store/app'
-import UniconIcon from '@/components/UniconIcon'
-import { Tooltip } from '@/components/Tooltip/Tooltip'
-import SeparateLine from '../SeparateLine'
 import { useState } from 'react'
+import { useAppStore } from "@/flux/store"
+import { Tooltip, UniconIcon, SeparateLine } from '@/components/index'
 import DownArrow from '@/icons/svg/DownArrow'
 import Link from 'next/link'
 
-export default function Footer() {
-  const { copyright, socialLinks } = useAppStore.getState()
+export function Footer() {
   const [activeHover, setActiveHover] = useState(false)
+  const { copyright, socialLinks } = useAppStore(state => ({ copyright: state.copyright, socialLinks: state.socialLinks }))
 
   return <footer onMouseLeave={() => setActiveHover(false)} onMouseEnter={() => setActiveHover(true)} className="pt-10 sm:mt-10">
     <SeparateLine size="50" />

@@ -1,11 +1,11 @@
 import React, { ReactNode, Fragment } from 'react'
 import Head from 'next/head'
 import { APP_NAME } from "@/config/app"
-import Header from '@/components/Layout/Header'
-import Footer from '@/components/Layout/Footer'
+import { Header, Footer } from '@/components/index'
+
 type LayoutProps = { children?: ReactNode, title?: string }
 
-export default function Layout({ children, title = APP_NAME }: LayoutProps) {
+export function Layout({ children, title = APP_NAME }: LayoutProps) {
   return <Fragment>
     <Head>
       <title>{title}</title>

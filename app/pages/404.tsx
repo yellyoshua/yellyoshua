@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout/Layout'
+import { Layout } from '@/ui/Layout'
 
 function NotFoundPage() {
   return <Layout title="404">
