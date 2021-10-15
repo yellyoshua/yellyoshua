@@ -1,4 +1,4 @@
-import { ButtonLink } from "@/components/index"
+import { ButtonLink, Text } from "@/components/index"
 import { useAppStore } from "@/flux/store"
 
 export function GridProjects() {
@@ -14,13 +14,13 @@ export function GridProjects() {
               <h1 className="uppercase text-base font-bold font-arvo text-white">
                 {project.name}
               </h1>
-              <p className="text-sm text-center break-words w-36 py-3 font-light font-arvo m-auto text-white">
+              <Text className="text-sm text-center break-words w-36 py-3 font-light m-auto text-white">
                 {project.description}
-              </p>
+              </Text>
               <div className="w-full my-3">
-                <p className={`text-xs text-white m-auto ${project.development ? "bg-red-600" : "bg-green-600"} w-max px-1 py-1 leading-none`}>
+                <Text className={`text-xs text-white m-auto ${project.development ? "bg-red-600" : "bg-green-600"} w-max px-1 py-1 leading-none`}>
                   {project.development ? "Proyecto en desarrollo" : "Proyecto terminado"}
-                </p>
+                </Text>
               </div>
 
               <ButtonLink

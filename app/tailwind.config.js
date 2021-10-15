@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        arvo: ["Arvo", "serif"],
+        arvo: ["Arvo", "sans-serif"],
+        varela: ["Varela Round", "sans-serif"],
       },
     },
   },
