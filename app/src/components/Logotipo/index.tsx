@@ -1,26 +1,13 @@
-import styled, { css } from "styled-components"
+import Link from "next/link"
+// import styled from "styled-components"
 
-const LOGO_STYLES = {
-  milky: "white",
-  dark: "black",
-  damm: "red"
-}
+export function Logotipo() {
 
-type LogotipoProps = {
-  variant?: keyof typeof LOGO_STYLES
-}
-
-const TextLogo = styled.p`
-  font-size: 35;
-  border-style: "dotted";
-  ${({ color }) => css`
-    color: ${color};
-    border-bottom: 15px ${color};
-  `}
-`
-
-export function Logotipo({ variant }: LogotipoProps) {
-  let color = variant ? LOGO_STYLES[variant] : LOGO_STYLES["dark"]
-
-  return <TextLogo className="font-arvo font-bold antialiased" color={color}> YELL</TextLogo>
+  return <Link href="/">
+    <a>
+      <p
+        className="font-arvo font-bold antialiased dark:text-white text-black border-dotted"
+        style={{ fontSize: 35, borderBottom: "15px black" }}> YELL</p>
+    </a>
+  </Link>
 }
