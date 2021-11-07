@@ -1,4 +1,4 @@
-import { Layout } from '@/ui/Layout'
+import { Layout } from 'src/ui/Layout'
 
 function NotFoundPage() {
   return <Layout title="404">

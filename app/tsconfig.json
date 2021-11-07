@@ -19,16 +19,8 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/config/*": ["config/*"],
-      "@/pages/*": ["pages/*"],
-      "@/utils/*": ["utils/*"],
-      "@/hooks/*": ["hooks/*"],
-      "@/enums/*": ["enums/*"],
-      "@/interfaces/*": ["interfaces/*"],
-      "@/flux/*": ["flux/*"],
-      "@/ui/*": ["ui/*"],
-      "@/icons/*": ["icons/*"]
+      "@/app/*": ["src/*"],
+      "@/pages/*": ["pages/*"]
     }
   },
   "exclude": ["node_modules", ".next"],
