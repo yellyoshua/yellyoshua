@@ -1,12 +1,12 @@
-import createStore from "zustand"
-import { ProjectsReducer } from "@/app/interfaces";
+import createStore from 'zustand';
+import { ProjectsReducer } from '@/app/interfaces';
 
-interface FullReducer extends ProjectsReducer { }
+interface FullReducer extends ProjectsReducer {}
 
 const initialState: ProjectsReducer = {
-  projects: []
-}
+	projects: [],
+};
 
 export const useProjectsStore = createStore<FullReducer>(() => ({
-  ...initialState
-}))
+	...initialState,
+}));

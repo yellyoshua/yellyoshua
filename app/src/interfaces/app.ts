@@ -5,26 +5,26 @@
 // import { Message } from 'path/to/interfaces';
 
 export interface DispatchStore<T> {
-  payload?: Record<string, any>,
-  type: T
+	payload?: Record<string, any>;
+	type: T;
 }
 
 export interface SocialLink {
-  name: string,
-  uniconIcon: string,
-  url: string
+	name: string;
+	icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
+	url: string;
 }
 
 export interface Message {
-  date: string | Date,
-  author: string,
-  isSender: boolean,
-  isInfo: boolean,
-  isReceiver: boolean,
-  message: string,
-  attachment?: Attachment
+	date: string | Date;
+	author: string;
+	isSender: boolean;
+	isInfo: boolean;
+	isReceiver: boolean;
+	message: string;
+	attachment?: Attachment;
 }
 
 export interface Attachment {
-  fileName: string
+	fileName: string;
 }

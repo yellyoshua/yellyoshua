@@ -1,4 +1,3 @@
+interface ProvidersProps {}
 
-interface ProvidersProps { }
-
-export const Providers = ({ }: ProvidersProps) => {}
+export const Providers = ({}: ProvidersProps) => {};

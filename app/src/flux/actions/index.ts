@@ -1,2 +1,2 @@
-export * from "./theme.actions"
-export * from "./projects.actions"
+export * from './theme.actions';
+export * from './projects.actions';

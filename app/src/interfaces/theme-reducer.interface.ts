@@ -1,3 +1,3 @@
 export interface ThemeReducer {
-  darkMode: boolean;
+	darkMode: boolean;
 }
