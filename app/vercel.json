@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/ping.ts": {
+    "pages/api/ping.ts": {
       "memory": 128,
       "maxDuration": 5
     }
