@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/ping.ts": {
+      "memory": 128,
+      "maxDuration": 5
+    }
+  },
+  "cleanUrls": true,
+  "trailingSlash": false
+}
