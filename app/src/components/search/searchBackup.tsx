@@ -1,21 +1,15 @@
 import { useRouter } from 'next/router';
-import { FC, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useFormik } from 'formik';
-import { useSafeFetch } from 'src/hooks/useSafeFetch';
 import { useAppStore } from 'src/flux/store';
 
-type Props = {};
+interface Props {}
 
-const SearchBackup: FC<Props> = () => {
+const SearchBackup = ({}: Props) => {
 	const router = useRouter();
-	const { safeFetch, signal, controller } = useSafeFetch();
 
 	const apiURL = useAppStore.getState().API_URL;
 	const [isSubmitting, setSubmitting] = useState(false);
-
-	useEffect(() => {
-		return () => controller?.abort();
-	}, []);
 
 	const search = useFormik({
 		initialValues: { messagesId: '' },
@@ -28,10 +22,9 @@ const SearchBackup: FC<Props> = () => {
 
 				const body = JSON.stringify({ messagesId });
 
-				const res = await safeFetch(`${apiURL}/api/messages`, {
+				const res = await fetch(`${apiURL}/api/messages`, {
 					method: 'POST',
 					body,
-					signal,
 				});
 				if (res.status !== 200) {
 					return setSubmitting(false);
