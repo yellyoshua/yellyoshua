@@ -1,15 +1,10 @@
-import { useState } from 'react';
-import { useAppStore } from 'src/flux/store';
-import { Tooltip, SeparateLine } from 'src/components/index';
-import DownArrow from '@/app/icons/svg/DownArrow';
 import Link from 'next/link';
+import { useAppStore } from '@/app/flux/store';
+import { SeparateLine } from '@/app/components';
+import { SocialNetworksContainer } from './SocialNetworksContainer';
 
 export function Footer() {
-	const [activeHover, setActiveHover] = useState(false);
-	const { copyright, socialLinks } = useAppStore((state) => ({
-		copyright: state.copyright,
-		socialLinks: state.socialLinks,
-	}));
+	const copyright = useAppStore((state) => state.copyright);
 
 	const renderBuyMeACoffe = () => (
 		<div className='flex justify-center select-none mt-3 mb-8'>
@@ -26,41 +21,8 @@ export function Footer() {
 	);
 
 	return (
-		<footer
-			onMouseLeave={() => setActiveHover(false)}
-			onMouseEnter={() => setActiveHover(true)}
-			className='pt-10 sm:mt-10'
-		>
-			<div className='py-3'>
-				<p
-					className={`text-center text-black dark:text-white font-bold text-2xl font-arvo uppercase antialiased`}
-				>
-					Redes sociales
-				</p>
-				<DownArrow
-					className={`m-auto mt-10 mb-5 ${
-						activeHover ? 'text-black dark:text-white' : 'text-gray-500'
-					} fill-current animate-bounce`}
-				/>
-			</div>
-
-			<div className='w-full justify-center md:flex-auto md:flex-row-reverse pt-3 pb-7 flex-row flex'>
-				{socialLinks.map((social, index) => {
-					return (
-						<Tooltip key={index} tooltip={social.name}>
-							<a href={social.url} target='_blank'>
-								<div className='mx-1 text-center p-2'>
-									<social.icon
-										width='24'
-										height='24'
-										className='fill-current text-gray-500 hover:text-black dark:hover:text-white transition-all'
-									/>
-								</div>
-							</a>
-						</Tooltip>
-					);
-				})}
-			</div>
+		<footer className='pt-10 sm:mt-10'>
+			<SocialNetworksContainer />
 
 			<SeparateLine size='50' />
 			<div className='py-5 text-center'>
