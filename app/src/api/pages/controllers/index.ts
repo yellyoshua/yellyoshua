@@ -11,7 +11,7 @@ export class PagesController {
   async getPagesSlug(): Promise<PageWithSlug[]> {
     const { data } = await this.pageRepository.getPagesSlug()
 
-    const { pages } = data || {}
+    const { pages = null } = data || {}
 
     if (pages === null) {
       return []
@@ -22,7 +22,7 @@ export class PagesController {
 
   async getPageBySlug(slug: string): Promise<Page> {
     const { data } = await this.pageRepository.getPageBySlug(slug)
-    const { page } = data || {}
+    const { page = null } = data || {}
     return page
   }
 }

@@ -22,6 +22,7 @@ export const getStaticProps: GetStaticProps<PagesProps> = async (ctx) => {
 
 	return {
 		props: { page },
+		revalidate: 900,
 	};
 };
 
