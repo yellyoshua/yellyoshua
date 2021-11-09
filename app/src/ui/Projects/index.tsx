@@ -8,7 +8,7 @@ export function Projects() {
 	return (
 		<div className='w-full'>
 			<h1 className='text-center mb-16 text-black dark:text-white font-bold font-arvo text-2xl uppercase'>
-				Proyectos
+				Projects
 			</h1>
 			<div className='grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				{projects.map((project, index) => {
@@ -59,7 +59,7 @@ export function Projects() {
 
 										<ButtonLink
 											to={`/project/${project.slug}`}
-											text='Saber mas'
+											text='More info'
 										/>
 									</div>
 								</div>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useAppStore } from '@/app/flux/store';
 import { SeparateLine } from '@/app/components';
-import { SocialNetworksContainer } from './SocialNetworksContainer';
+import { SocialLinksContainer } from './SocialLinksContainer';
 
 export function Footer() {
 	const copyright = useAppStore((state) => state.copyright);
@@ -22,7 +22,7 @@ export function Footer() {
 
 	return (
 		<footer className='pt-10 sm:mt-10'>
-			<SocialNetworksContainer />
+			<SocialLinksContainer />
 
 			<SeparateLine size='50' />
 			<div className='py-5 text-center'>

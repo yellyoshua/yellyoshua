@@ -6,8 +6,8 @@ interface HeaderProps {}
 
 const navLinks = [
 	{ text: 'Home', to: '/' },
-	{ text: 'Servicios', to: '/services' },
-	{ text: 'Acerca', to: '/about-me' },
+	// { text: 'Servicios', to: '/services' },
+	{ text: 'About me', to: '/about-me' },
 	{ text: 'Blog', to: '/blog' },
 ];
 

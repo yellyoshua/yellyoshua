@@ -3,7 +3,7 @@ import { useAppStore } from '@/app/flux/stores';
 import { Tooltip } from '@/app/components';
 import DownArrow from '@/app/icons/svg/DownArrow';
 
-export const SocialNetworksContainer = () => {
+export const SocialLinksContainer = () => {
 	const [activeHover, setActiveHover] = useState(false);
 	const socialLinks = useAppStore((state) => state.socialLinks);
 
@@ -16,7 +16,7 @@ export const SocialNetworksContainer = () => {
 				<p
 					className={`text-center text-black dark:text-white font-bold text-2xl font-arvo uppercase antialiased`}
 				>
-					Redes sociales
+					Connect
 				</p>
 				<DownArrow
 					className={`m-auto mt-10 mb-5 ${

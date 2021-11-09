@@ -25,7 +25,7 @@ describe('Projects ui component', () => {
 	it('should render and check title be inside h1 tag', async () => {
 		const project = render(<Projects />);
 
-		const title = await project.findByText(/Proyectos/i);
+		const title = await project.findByText(/Projects/i);
 		expect(title.nodeName).toEqual('H1');
 	});
 

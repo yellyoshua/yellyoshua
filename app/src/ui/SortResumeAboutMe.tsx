@@ -7,7 +7,7 @@ export function SortResumeAboutMe() {
 		return (
 			<div className='pt-5'>
 				<h1 className='font-arvo text-xl font-bold text-black dark:text-white'>
-					Acciones r&aacute;pidas
+					Quick actions
 				</h1>
 				<DarkModeSwitch />
 			</div>
@@ -38,8 +38,8 @@ export function SortResumeAboutMe() {
 							Once upon a time
 						</p>
 						<h2 className='font-arvo text-lg text-black dark:text-white'>
-							Un joven autodidacta apasionado por el aprender constantemente
-							cada d&iacute;a.
+							A self-taught young man with a passion for constant learning every
+							day. <code className="text-sm">(With Google translate)</code>
 						</h2>
 						{renderQuickActions()}
 					</div>
