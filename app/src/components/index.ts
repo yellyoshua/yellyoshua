@@ -4,3 +4,4 @@ export * from './Header';
 export * from './Footer';
 export * from './RenderMarkdown';
 export * from './DarkModeSwitch';
+export * from './PagesRecommendation';
