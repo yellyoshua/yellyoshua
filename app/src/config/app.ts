@@ -1,4 +1,4 @@
-import { SocialLink } from 'src/interfaces/app';
+import { SocialLink } from 'src/interfaces';
 import { LinkedinAlt } from '../icons/svg/LinkedinAlt';
 import { TwitterAlt } from '../icons/svg/TwitterAlt';
 import { Instagram } from '../icons/svg/Instagram';
