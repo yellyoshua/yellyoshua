@@ -1,4 +1,4 @@
-import { SocialLink } from './app';
+import { SocialLink } from './interfaces';
 
 export interface AppReducer {
 	name: string;
