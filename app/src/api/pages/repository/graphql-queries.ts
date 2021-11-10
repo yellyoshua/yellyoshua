@@ -14,6 +14,9 @@ export const GET_PAGE_BY_SLUG = gql`
       slug
       name
       title
+      content {
+        markdown
+      }
     }
   }
 `
