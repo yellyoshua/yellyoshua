@@ -1,4 +1,4 @@
-import { DarkModeSwitch } from '../components/DarkModeSwitch';
+import { DarkModeSwitch } from '@/app/components';
 
 const srcImage = '/assets/images/me-as-vector-005502.png';
 
@@ -39,7 +39,7 @@ export function SortResumeAboutMe() {
 						</p>
 						<h2 className='font-arvo text-lg text-black dark:text-white'>
 							A self-taught young man with a passion for constant learning every
-							day. <code className="text-sm">(With Google translate)</code>
+							day. <code className='text-sm'>(With Google translate)</code>
 						</h2>
 						{renderQuickActions()}
 					</div>

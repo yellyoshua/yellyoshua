@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { Layout } from '@/app/ui';
 import { getPageBySlug, getPagesWithSlug } from '@/app/flux/actions';
 import { Page } from '@/app/interfaces';
+import { RenderMarkdown } from '@/app/components';
 
 interface PagesProps {
 	page: Page;
@@ -10,7 +11,11 @@ interface PagesProps {
 export default function Pages({ page }: PagesProps) {
 	return (
 		<Layout title={page.title}>
-			<h1>{page.title}</h1>
+			<RenderMarkdown
+				className='mx-auto px-5 sm:px-12 py-5'
+				style={{ maxWidth: 800 }}
+				markdown={page.content ? page.content.markdown || '' : ''}
+			/>
 		</Layout>
 	);
 }
