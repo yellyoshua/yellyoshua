@@ -39,7 +39,9 @@ export const PagesRecommendation = ({
 
 	return (
 		<div {...props}>
-			<h4 className='text-base font-arvo'>Recommendations</h4>
+			<h4 className='text-base font-arvo text-black dark:text-white'>
+				Recommendations
+			</h4>
 			{renderRecomendationsGrid()}
 		</div>
 	);

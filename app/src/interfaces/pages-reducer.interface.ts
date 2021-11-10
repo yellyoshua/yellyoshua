@@ -7,7 +7,8 @@ export interface Page {
 	slug: string;
 	title: string;
 	description: string;
-	content: {
+	content: string | null;
+	richContent: {
 		markdown?: string;
 		html?: string;
 		text?: string;

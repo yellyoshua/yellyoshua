@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useAppStore } from '@/app/flux/store';
-import { SeparateLine } from '@/app/components';
+import { DarkModeSwitch, SeparateLine } from '@/app/components';
 import { SocialLinksContainer } from './SocialLinksContainer';
 
 export function Footer() {
@@ -20,11 +20,21 @@ export function Footer() {
 		</div>
 	);
 
+	const renderQuickActions = () => {
+		return (
+			<div className='text-center'>
+				<DarkModeSwitch />
+			</div>
+		);
+	};
+
 	return (
 		<footer className='pt-10 sm:mt-10'>
 			<SocialLinksContainer />
-
 			<SeparateLine size='50' />
+
+			{renderQuickActions()}
+
 			<div className='py-5 text-center'>
 				<p className='italic select-none text-base font-arvo text-black dark:text-white'>
 					"Primero en tu mente, luego en tu realidad" - Julio Verne

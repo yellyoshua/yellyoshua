@@ -1,11 +1,21 @@
+import { useEffect } from 'react';
+import Switch from 'react-switch';
 import { changeDarkMode } from '@/app/flux/actions';
 import { useThemeStore } from '@/app/flux/stores';
-import Switch from 'react-switch';
 import MoonIcon from '@heroicons/react/outline/MoonIcon';
 import SunIcon from '@heroicons/react/outline/SunIcon';
+import { isBrowser } from '@/app/utils/storage';
 
 export const DarkModeSwitch = () => {
 	const isDarkMode = useThemeStore((state) => state.darkMode);
+
+	useEffect(() => {
+		isBrowser && changeDarkMode(isDarkMode, false);
+	}, []);
+
+	if (!isBrowser) {
+		return null;
+	}
 
 	return (
 		<div>

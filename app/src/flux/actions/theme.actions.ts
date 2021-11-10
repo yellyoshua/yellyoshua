@@ -1,10 +1,13 @@
 import { useThemeStore } from 'src/flux/store';
 
-export const changeDarkMode = (active: boolean) => {
+export const changeDarkMode = (active: boolean, dispatch: boolean = true) => {
 	active
 		? document.documentElement.classList.add('dark')
 		: document.documentElement.classList.remove('dark');
-	return useThemeStore.setState((prev) => ({ ...prev, darkMode: active }));
+	return (
+		dispatch &&
+		useThemeStore.setState((prev) => ({ ...prev, darkMode: active }))
+	);
 };
 
 export const toggleDarkMode = () => {
