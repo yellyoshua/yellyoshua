@@ -1,19 +1,6 @@
-import { DarkModeSwitch } from '@/app/components';
-
 const srcImage = '/assets/images/me-as-vector-005502.png';
 
 export function SortResumeAboutMe() {
-	const renderQuickActions = () => {
-		return (
-			<div className='pt-5'>
-				<h1 className='font-arvo text-xl font-bold text-black dark:text-white'>
-					Quick actions
-				</h1>
-				<DarkModeSwitch />
-			</div>
-		);
-	};
-
 	return (
 		<div className='md:h-screen mb-16 md:mb-0'>
 			<div className='grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 select-none'>
@@ -41,7 +28,6 @@ export function SortResumeAboutMe() {
 							A self-taught young man with a passion for constant learning every
 							day. <code className='text-sm'>(With Google translate)</code>
 						</h2>
-						{renderQuickActions()}
 					</div>
 				</div>
 			</div>

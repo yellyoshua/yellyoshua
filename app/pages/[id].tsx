@@ -14,7 +14,7 @@ export default function Pages({ page }: PagesProps) {
 			<RenderMarkdown
 				className='mx-auto px-5 sm:px-12 py-5'
 				style={{ maxWidth: 800 }}
-				markdown={page.content ? page.content.markdown || '' : ''}
+				markdown={page.richContent ? page.richContent.markdown || '' : ''}
 			/>
 			<PagesRecommendation
 				className='mx-auto px-5 py-5'

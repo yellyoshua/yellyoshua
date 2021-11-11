@@ -15,7 +15,8 @@ export const GET_PAGE_BY_SLUG = gql`
 			name
 			title
 			description
-			content {
+			content
+			richContent {
 				markdown
 			}
 		}
