@@ -1,4 +1,4 @@
-const srcImage = '/assets/images/me-as-vector-005502.png';
+import { MeAsVector } from '../assets/images/me-as-vector';
 
 export function SortResumeAboutMe() {
 	return (
@@ -6,11 +6,7 @@ export function SortResumeAboutMe() {
 			<div className='grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 select-none'>
 				<div className='flex justify-center'>
 					<div className='shadow-2xl border-green-500 border-2 p-1 rounded-md'>
-						<img
-							className='border-purple-700 border-2 w-60 bg-white pb-6 rounded-md'
-							src={srcImage}
-							alt={srcImage}
-						/>
+						<MeAsVector className='border-purple-700 border-2 w-60 bg-white dark:bg-gray-900 filter pb-6 rounded-md fill-current text-dark dark:text-white' />
 					</div>
 				</div>
 				<div className='flex m-auto pt-5 md:pt-0 md:m-0 place-items-center'>

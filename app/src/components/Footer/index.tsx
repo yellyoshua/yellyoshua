@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useAppStore } from '@/app/flux/store';
 import { DarkModeSwitch, SeparateLine } from '@/app/components';
 import { SocialLinksContainer } from './SocialLinksContainer';
@@ -8,9 +9,12 @@ export function Footer() {
 
 	const renderBuyMeACoffe = () => (
 		<div className='flex justify-center select-none mt-3 mb-8'>
-			<a href='https://www.buymeacoffee.com/yellyoshua' target='_blank'>
-				<img
-					className='transform transition-all skew-y-6 hover:scale-125'
+			<a
+				href='https://www.buymeacoffee.com/yellyoshua'
+				target='_blank'
+				rel='noreferrer'
+			>
+				<Image
 					src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
 					alt='Buy Me A Coffee'
 					height='41'
@@ -37,7 +41,7 @@ export function Footer() {
 
 			<div className='py-5 text-center'>
 				<p className='italic select-none text-base font-arvo text-black dark:text-white'>
-					"Primero en tu mente, luego en tu realidad" - Julio Verne
+					&quot;Primero en tu mente, luego en tu realidad&quot; - Julio Verne
 				</p>
 				<p className='text-center text-xs font-arvo text-black dark:text-gray-300'>
 					Todo empieza en la mente de alguien.

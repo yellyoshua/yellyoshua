@@ -10,7 +10,7 @@ export const RenderMarkdown = ({ markdown, ...props }: RenderMarkdownProps) => {
 	return (
 		<div {...props}>
 			<ReactMarkdown
-				className='markdown markdown-green md:markdown-lg max-w-none'
+				className='markdown markdown-green md:markdown-lg max-w-none text-black dark:text-white'
 				remarkPlugins={[remarkGfm]}
 				rehypePlugins={[rehypeRaw]}
 			>
