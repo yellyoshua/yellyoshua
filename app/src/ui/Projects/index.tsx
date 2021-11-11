@@ -32,7 +32,7 @@ export function Projects() {
 										{project.title}
 									</h1>
 									<Text className='text-sm text-center break-words px-3 py-3 font-light m-auto text-white'>
-										{project.sortDescription}
+										{project.description}
 									</Text>
 									<div className='w-full my-3'>
 										<Text
