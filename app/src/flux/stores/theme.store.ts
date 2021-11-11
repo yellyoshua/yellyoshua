@@ -6,6 +6,7 @@ interface FullReducer extends ThemeReducer {}
 
 const initialState: ThemeReducer = {
 	darkMode: false,
+	timesChangedDarkMode: 0,
 };
 
 export const useThemeStore = createStore<FullReducer>(
