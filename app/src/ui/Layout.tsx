@@ -24,7 +24,7 @@ export function Layout({ children, title = APP_NAME }: LayoutProps) {
 					rel='stylesheet'
 				></link>
 			</Head>
-			<div className='bg-white dark:bg-gray-900'>
+			<div className='bg-white dark:bg-gray-900 min-h-screen'>
 				<Header />
 				{children}
 				<Footer />

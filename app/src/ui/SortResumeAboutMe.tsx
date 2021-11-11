@@ -2,7 +2,7 @@ import { MeAsVector } from '../assets/images/me-as-vector';
 
 export function SortResumeAboutMe() {
 	return (
-		<div className='md:h-screen mb-16 md:mb-0'>
+		<div className='mb-16 md:mb-0'>
 			<div className='grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 select-none'>
 				<div className='flex justify-center'>
 					<div className='shadow-2xl border-green-500 border-2 p-1 rounded-md'>

@@ -10,7 +10,20 @@ export const DarkModeSwitch = () => {
 	const isDarkMode = useThemeStore((state) => state.darkMode);
 
 	useEffect(() => {
-		isBrowser && changeDarkMode(isDarkMode, false);
+		if (isBrowser) {
+			const timesChangedDarkMode =
+				useThemeStore.getState().timesChangedDarkMode;
+
+			if (
+				window.matchMedia &&
+				window.matchMedia('(prefers-color-scheme: dark)').matches &&
+				timesChangedDarkMode === 0
+			) {
+				changeDarkMode(true);
+			} else {
+				changeDarkMode(isDarkMode);
+			}
+		}
 	}, []);
 
 	if (!isBrowser) {
