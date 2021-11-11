@@ -2,13 +2,13 @@ export interface Project {
 	id: string;
 	title: string;
 	slug: string;
-	sortDescription: string;
-	description: {
+	description: string;
+	content: {
 		html?: string;
 		json?: string;
 		markdown?: string;
 		text?: string;
-	};
+	} | null;
 	isDevelopment: boolean;
 	externalLink: string | null;
 	backdrop: {
@@ -18,6 +18,10 @@ export interface Project {
 		size: number;
 	} | null;
 	repository: string | null;
+}
+
+export interface ProjectWithSlug {
+	slug: string;
 }
 
 export interface ProjectsReducer {
