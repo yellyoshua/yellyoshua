@@ -19,9 +19,9 @@ export const DarkModeSwitch = () => {
 				window.matchMedia('(prefers-color-scheme: dark)').matches &&
 				timesChangedDarkMode === 0
 			) {
-				changeDarkMode(true);
+				changeDarkMode(true, false);
 			} else {
-				changeDarkMode(isDarkMode);
+				changeDarkMode(isDarkMode, false);
 			}
 		}
 	}, []);
