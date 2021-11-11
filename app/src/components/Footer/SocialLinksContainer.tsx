@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useAppStore } from '@/app/flux/stores';
 import { Tooltip } from '@/app/components';
-import DownArrow from '@/app/icons/svg/DownArrow';
+import DownArrow from '@/app/assets/icons/DownArrow';
 
-export const SocialNetworksContainer = () => {
+export const SocialLinksContainer = () => {
 	const [activeHover, setActiveHover] = useState(false);
 	const socialLinks = useAppStore((state) => state.socialLinks);
 
@@ -16,7 +16,7 @@ export const SocialNetworksContainer = () => {
 				<p
 					className={`text-center text-black dark:text-white font-bold text-2xl font-arvo uppercase antialiased`}
 				>
-					Redes sociales
+					Connect WITH ME
 				</p>
 				<DownArrow
 					className={`m-auto mt-10 mb-5 ${
@@ -29,7 +29,7 @@ export const SocialNetworksContainer = () => {
 				{socialLinks.map((social, index) => {
 					return (
 						<Tooltip key={index} tooltip={social.name}>
-							<a href={social.url} target='_blank'>
+							<a href={social.url} target='_blank' rel='noreferrer'>
 								<div className='mx-1 text-center p-2'>
 									<social.icon
 										width='24'

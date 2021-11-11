@@ -1,8 +1,8 @@
-import { SocialLink } from 'src/interfaces/app';
-import { LinkedinAlt } from '../icons/svg/LinkedinAlt';
-import { TwitterAlt } from '../icons/svg/TwitterAlt';
-import { Instagram } from '../icons/svg/Instagram';
-import { TelegramAlt } from '../icons/svg/TelegramAlt';
+import { SocialLink } from 'src/interfaces';
+import { LinkedinAlt } from '../assets/icons/LinkedinAlt';
+import { TwitterAlt } from '../assets/icons/TwitterAlt';
+import { Instagram } from '../assets/icons/Instagram';
+import { TelegramAlt } from '../assets/icons/TelegramAlt';
 
 export const APP_NAME: string = 'Yoshua Lopez';
 

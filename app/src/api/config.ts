@@ -10,9 +10,11 @@ const createHttpLink = () => {
 };
 
 export const GraphQLClient = () => {
+	const link = createHttpLink()
+
 	return new ApolloClient({
 		cache: new InMemoryCache(),
 		ssrMode,
-		link: createHttpLink(),
+		link,
 	});
 };

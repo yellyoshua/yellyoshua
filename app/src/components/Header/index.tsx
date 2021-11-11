@@ -6,14 +6,14 @@ interface HeaderProps {}
 
 const navLinks = [
 	{ text: 'Home', to: '/' },
-	{ text: 'Servicios', to: '/services' },
-	{ text: 'Acerca', to: '/about-me' },
-	{ text: 'Blog', to: '/blog' },
+	{ text: 'About me', to: '/about-me' },
+	{ text: 'Knowledges', to: '/knowledges' },
+	{ text: 'Contact me', to: '/contact' },
 ];
 
 export function Header({}: HeaderProps) {
 	const router = useRouter();
-	const currentPath = router.pathname;
+	const currentPath = router.asPath;
 
 	return (
 		<header className='w-full'>
@@ -27,7 +27,7 @@ export function Header({}: HeaderProps) {
 							<a
 								className={`uppercase border-b-2 font-arvo antialiased text-xs md:text-sm
                   ${
-										currentPath.includes(navLink.to)
+										navLink.to === currentPath
 											? 'font-bold border-black dark:border-white text-black dark:text-white'
 											: 'font-light text-gray-500 dark:text-gray-400'
 									} 
