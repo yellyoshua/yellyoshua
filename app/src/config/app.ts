@@ -4,7 +4,7 @@ import { TwitterAlt } from '../assets/icons/TwitterAlt';
 import { Instagram } from '../assets/icons/Instagram';
 import { TelegramAlt } from '../assets/icons/TelegramAlt';
 
-export const APP_NAME: string = 'Yoshua Lopez';
+export const APP_NAME: string = 'Yoshua Lopez | YELL';
 
 export const COPYRIGHT: string =
 	'Copyright 2021 Yoshua López. All Rights Reserved.';

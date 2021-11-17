@@ -12,6 +12,8 @@ export function Layout({ children, title = APP_NAME }: LayoutProps) {
 				<meta charSet='utf-8' />
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
 				<title>{title}</title>
+				<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+				<link rel='manifest' href='/manifest.json' />
 				<link rel='preconnect' href='https://fonts.gstatic.com' />
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 
