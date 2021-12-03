@@ -7,9 +7,6 @@ export const GET_ALL_PROJECTS = gql`
 			title
 			slug
 			description
-			content {
-				markdown
-			}
 			isDevelopment
 			externalLink
 			backdrop {
@@ -39,7 +36,7 @@ export const GET_PROJECT_BY_SLUG = gql`
 			slug
 			description
 			content {
-				markdown
+				html
 			}
 			isDevelopment
 			externalLink

@@ -1,6 +1,6 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { Layout } from '@/app/ui';
-import { getProjectBySlug, getProjectsWithSlug } from '@/app/flux/actions';
+import { getProjectBySlug } from '@/app/flux/actions';
 import { RenderMarkdown } from '@/app/components';
 import { Project } from '@/app/interfaces';
 
@@ -18,30 +18,24 @@ export default function Projects({ project }: ProjectProps) {
 				{project.title}
 			</p>
 			<RenderMarkdown
+				html
 				className='mx-auto px-5 sm:px-12 py-5 font-arvo'
 				style={{ maxWidth: 800 }}
-				markdown={project.content ? project.content.markdown || '' : ''}
+				markdown={project.content ? project.content.html || '' : ''}
 			/>
 		</Layout>
 	);
 }
 
-export const getStaticProps: GetStaticProps<ProjectProps> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<ProjectProps> = async (
+	ctx
+) => {
 	const project = await getProjectBySlug(
 		ctx.params?.id ? (ctx.params.id as string) : ''
 	);
 
 	return {
 		props: { project },
-		revalidate: 900,
-	};
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-	const projects = await getProjectsWithSlug();
-
-	return {
-		paths: projects.map((project) => ({ params: { id: project.slug } })),
-		fallback: false,
+		notFound: project === null,
 	};
 };
