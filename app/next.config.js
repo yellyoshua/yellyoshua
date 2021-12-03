@@ -11,4 +11,5 @@ module.exports = {
 	images: {
 		domains: ['cdn.buymeacoffee.com', 'media.graphcms.com'],
 	},
+	swcMinify: true,
 };
