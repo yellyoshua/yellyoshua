@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { Layout } from '@/app/ui';
 import { getProjectBySlug } from '@/app/flux/actions';
 import { RenderMarkdown } from '@/app/components';
@@ -27,7 +27,9 @@ export default function Projects({ project }: ProjectProps) {
 	);
 }
 
-export const getStaticProps: GetStaticProps<ProjectProps> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<ProjectProps> = async (
+	ctx
+) => {
 	const project = await getProjectBySlug(
 		ctx.params?.id ? (ctx.params.id as string) : ''
 	);
