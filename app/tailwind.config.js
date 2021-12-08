@@ -6,6 +6,9 @@ module.exports = {
 		transform: {
 			mdx: (content) => mdx.sync(content),
 		},
+		options: {
+			keyframes: true, // Removing unused keyframes
+		},
 	},
 	darkMode: 'class', // or 'media' or 'class'
 	theme: {
@@ -22,5 +25,6 @@ module.exports = {
 	plugins: [require('@tailwindcss/typography')],
 	corePlugins: {
 		invert: true,
+		float: false,
 	},
 };
