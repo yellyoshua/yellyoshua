@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { Layout } from '@/app/ui';
 import { getPageBySlug } from '@/app/flux/actions';
 import { Page } from '@/app/interfaces';
@@ -26,9 +26,7 @@ export default function Pages({ page }: PagesProps) {
 	);
 }
 
-export const getServerSideProps: GetServerSideProps<PagesProps> = async (
-	ctx
-) => {
+export const getStaticProps: GetStaticProps<PagesProps> = async (ctx) => {
 	const page = await getPageBySlug(
 		ctx.params?.id ? (ctx.params.id as string) : ''
 	);
