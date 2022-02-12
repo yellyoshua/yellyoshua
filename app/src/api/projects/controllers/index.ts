@@ -23,6 +23,7 @@ export class ProjectsController {
 	async getProjectBySlug(slug: string): Promise<Project> {
 		const { data } = await this.projectsRepository.getProjectBySlug(slug);
 		const { project = null } = data || {};
+		if (!project) throw new Error(`project ${slug} not found`);
 		return project;
 	}
 
