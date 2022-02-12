@@ -1,1 +1,3 @@
-export const a = {};
+export enum TIMEOUT_TIMES {
+	TEN_MINUTES_IN_SECONDS = 600,
+}
