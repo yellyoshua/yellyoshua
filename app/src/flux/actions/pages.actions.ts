@@ -3,7 +3,7 @@ import { usePagesStore } from '../stores';
 
 const pagesController = new PagesController();
 
-export const getPagesWithSlug = () => {
+export const getPagesSlug = () => {
 	return pagesController.getPagesSlug();
 };
 

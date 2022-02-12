@@ -23,6 +23,7 @@ export class PagesController {
 	async getPageBySlug(slug: string): Promise<Page> {
 		const { data } = await this.pageRepository.getPageBySlug(slug);
 		const { page = null } = data || {};
+		if (!page) throw new Error(`page ${slug} not found`);
 		return page;
 	}
 
