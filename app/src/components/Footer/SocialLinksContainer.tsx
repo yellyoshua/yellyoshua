@@ -29,7 +29,7 @@ export const SocialLinksContainer = () => {
 				{socialLinks.map((social, index) => {
 					return (
 						<Tooltip key={index} tooltip={social.name}>
-							<a href={social.url} target='_blank' rel='noreferrer'>
+							<a href={social.url} target='_blank' rel='noopener noreferrer'>
 								<div className='mx-1 text-center p-2'>
 									<social.icon
 										width='24'

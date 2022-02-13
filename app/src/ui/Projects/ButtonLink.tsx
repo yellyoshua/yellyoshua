@@ -11,6 +11,7 @@ export function ButtonLink({ to, text, external }: ButtonLinkProps) {
 	if (external) {
 		return (
 			<a
+				rel='noopener noreferrer'
 				target='_blank'
 				href={to}
 				className='duration-200 px-3 my-1 m-auto w-2/4 uppercase font-semibold border-2 border-white text-white hover:bg-white hover:text-black'

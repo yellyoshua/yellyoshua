@@ -10,13 +10,19 @@ export const GET_ALL_PROJECTS = gql`
 			isDevelopment
 			externalLink
 			backdrop {
-				url
-				height
-				width
-				size
+				...backdropFields
 			}
 			repository
+			createdAt
+			updatedAt
 		}
+	}
+
+	fragment backdropFields on Asset {
+		height
+		width
+		url
+		fileName
 	}
 `;
 
@@ -41,12 +47,18 @@ export const GET_PROJECT_BY_SLUG = gql`
 			isDevelopment
 			externalLink
 			backdrop {
-				url
-				height
-				width
-				size
+				...backdropFields
 			}
 			repository
+			createdAt
+			updatedAt
 		}
+	}
+
+	fragment backdropFields on Asset {
+		height
+		width
+		url
+		fileName
 	}
 `;
