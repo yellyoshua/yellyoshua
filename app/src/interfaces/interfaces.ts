@@ -9,6 +9,13 @@ export interface DispatchStore<T> {
 	type: T;
 }
 
+export interface Asset {
+	height: number;
+	width: number;
+	url: string;
+	fileName: string;
+}
+
 export interface SocialLink {
 	name: string;
 	icon: (props: React.ComponentProps<'svg'>) => JSX.Element;

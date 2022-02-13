@@ -11,6 +11,6 @@ export const getProjectBySlug = (slug: string): Promise<Project> => {
 	return projectsController.getProjectBySlug(slug);
 };
 
-export const getProjectsWithSlug = () => {
+export const getProjectsSlug = () => {
 	return projectsController.getProjectsSlug();
 };

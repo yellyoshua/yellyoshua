@@ -1,13 +1,6 @@
-const mdx = require('@mdx-js/mdx');
-
 module.exports = {
-	purge: {
-		content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
-		transform: {
-			mdx: (content) => mdx.sync(content),
-		},
-	},
-	darkMode: 'class', // or 'media' or 'class'
+	content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+	darkMode: 'class',
 	theme: {
 		extend: {
 			fontFamily: {
@@ -16,11 +9,9 @@ module.exports = {
 			},
 		},
 	},
-	variants: {
-		extend: {},
-	},
 	plugins: [require('@tailwindcss/typography')],
 	corePlugins: {
 		invert: true,
+		float: false,
 	},
 };
