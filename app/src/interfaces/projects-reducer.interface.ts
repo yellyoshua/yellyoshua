@@ -1,23 +1,17 @@
+import { Asset } from './interfaces';
+
 export interface Project {
 	id: string;
 	title: string;
 	slug: string;
 	description: string;
-	content: {
-		html?: string;
-		json?: string;
-		markdown?: string;
-		text?: string;
-	} | null;
+	content: { html?: string } | null;
 	isDevelopment: boolean;
 	externalLink: string | null;
-	backdrop: {
-		url: string;
-		height: number;
-		width: number;
-		size: number;
-	} | null;
+	backdrop: Asset | null;
 	repository: string | null;
+	createdAt: string;
+	updatedAt: string;
 }
 
 export interface ProjectWithSlug {
