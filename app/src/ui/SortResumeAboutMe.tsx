@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { MeAsVector } from '../assets/images/me-as-vector';
 
 export function SortResumeAboutMe() {
@@ -12,17 +13,17 @@ export function SortResumeAboutMe() {
 				<div className='flex m-auto pt-5 md:pt-0 md:m-0 place-items-center'>
 					<div className='text-left md:w-7/12 w-60'>
 						<h1 className='font-arvo text-xl font-bold text-black dark:text-white'>
-							I'm{' '}
-							<a href='/yellyoshua' className='text-green-500 hover:underline'>
-								@yellyoshua
-							</a>
+							I&lsquo;m{' '}
+							<Link href='/yellyoshua'>
+								<a className='text-green-500 hover:underline'>@yellyoshua</a>
+							</Link>
 						</h1>
 						<p className='font-arvo text-xs mb-4 text-green-500'>
 							Once upon a time
 						</p>
 						<h2 className='font-arvo text-lg text-black dark:text-white'>
 							A self-taught young man with a passion for constant learning every
-							day. <code className='text-sm'>(With Google translate)</code>
+							day.
 						</h2>
 					</div>
 				</div>
