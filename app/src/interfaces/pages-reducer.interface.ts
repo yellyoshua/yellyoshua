@@ -1,18 +1,17 @@
+import { Asset } from './interfaces';
+
 export interface PageWithSlug {
 	slug: string;
 }
 
 export interface Page {
-	name: string;
+	id: string;
 	slug: string;
 	title: string;
-	description: string;
-	content: string | null;
-	richContent: {
-		markdown?: string;
-		html?: string;
-		text?: string;
-	} | null;
+	createdAt: string;
+	updatedAt: string;
+	backdrop: Asset | null;
+	content: { html?: string } | null;
 }
 
 export interface PagesReducer {

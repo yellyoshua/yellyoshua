@@ -20,10 +20,10 @@ export class PagesRepository {
 		});
 	}
 
-	getPagesRecommendation(slug: string) {
+	getPagesRecommendation(slug: string, limit?: number) {
 		return this.api.query({
 			query: query.GET_PAGES_RECOMMENDATION,
-			variables: { slug },
+			variables: { slug, first: limit ?? 10 },
 		});
 	}
 }
