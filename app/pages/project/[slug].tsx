@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { Layout } from '@/app/ui';
 import { getProjectBySlug, getProjectsSlug } from '@/app/flux/actions';
-import { RenderMarkdown } from '@/app/components';
+import { ProjectDetails, RenderMarkdown } from '@/app/components';
 import { Project } from '@/app/interfaces';
 import { TIMEOUT_TIMES } from '@/app/enums/app';
 
@@ -12,12 +12,7 @@ interface ProjectProps {
 export default function Projects({ project }: ProjectProps) {
 	return (
 		<Layout title={project.title}>
-			<p
-				className='mx-auto px-5 sm:px-12 text-xl font-arvo font-bold text-left text-black dark:text-white my-4'
-				style={{ maxWidth: 800 }}
-			>
-				{project.title}
-			</p>
+			<ProjectDetails {...project} />
 			<RenderMarkdown
 				html
 				className='mx-auto px-5 sm:px-12 py-5 font-arvo'

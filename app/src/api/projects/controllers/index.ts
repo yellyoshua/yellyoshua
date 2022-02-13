@@ -10,12 +10,7 @@ export class ProjectsController {
 
 	async getAllProjects(): Promise<Project[]> {
 		const { data } = await this.projectsRepository.getAllProjects();
-
-		const { projects = null } = data || {};
-
-		if (projects === null) {
-			return [];
-		}
+		const { projects = [] } = data || {};
 
 		return projects;
 	}
@@ -29,12 +24,7 @@ export class ProjectsController {
 
 	async getProjectsSlug(): Promise<ProjectWithSlug[]> {
 		const { data } = await this.projectsRepository.getProjectsSlug();
-
-		const { projects = null } = data || {};
-
-		if (projects === null) {
-			return [];
-		}
+		const { projects = [] } = data || {};
 
 		return projects;
 	}
