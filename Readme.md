@@ -1,12 +1,16 @@
-<h1 align="center">😀 Hola que tal!</h1>
-
-<h3 align="center">Sé bienvenido/a 👋 a mi portafolio de proyectos.</h3>
-
-<h3 align="center">Proyectos los cuales realizo en base a curiosidad propia 🧠 que encuentro por aprender 📚 y tambien en base a el conocimientos que voy a adquiriendo ✅💬.</h3>
+<h1 align="center" style="font-weight:bold;">¡Hey! What's up 🤝</h1>
 
 </br>
 
-<h2 align="center">WITH KNOWLEDGES IN</h2>
+<h3 align="center">I'm Full Stack (Javascript) developer with a lot of curiosity! 👨🏻‍💻</h3>
+
+</br>
+
+---
+
+</br>
+
+<h2 style="font-weight:bold;" align="center">(🖥️) Know the technologies that I've worked!</h2>
 
 </br>
 
@@ -37,7 +41,13 @@
 <img align="center" src="https://img.shields.io/badge/Digital Ocean-black.svg?style=flat-square&logo=digitalocean">
 </p>
 
+</br>
+
 ---
+
+</br>
+
+<h2 align="center" style="font-weight:bold;">(✅) GitHub statistics</h2>
 
 </br>
 
@@ -51,7 +61,7 @@
 
 </br>
 
-<h3 align="center">CONNECT</h3>
+<h2 align="center" style="font-weight:bold;">Connect with me</h2>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/yellyoshua">
@@ -60,8 +70,8 @@
   <a href="https://twitter.com/yellyoshua">
     <img src="https://img.shields.io/badge/@yellyoshua-black.svg?style=flat-square&logo=twitter">
   </a>
-  <a href="https://www.instagram.com/yellyoshua">
-    <img src="https://img.shields.io/badge/yellyoshua-black.svg?style=flat-square&logo=instagram">
+  <a href="mailto:me@yoshualopez.com">
+    <img src="https://img.shields.io/badge/me@yoshualopez.com-black.svg?style=flat-square&logo=gmail">
   </a>
 </p>
 
@@ -70,5 +80,3 @@
 #### `Powered by yellyoshua `
 
 <a href="https://www.buymeacoffee.com/yellyoshua" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174" ></a>
-
-### [🤝] Soy un programador autodidacta.
