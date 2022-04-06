@@ -31,6 +31,11 @@ export function Layout({ children, title = APP_NAME }: LayoutProps) {
 				{children}
 				<Footer />
 			</div>
+			<script
+				async
+				src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7465243281843526'
+				crossOrigin='anonymous'
+			></script>
 			<style global jsx>{`
 				img {
 					pointer-events: none;
