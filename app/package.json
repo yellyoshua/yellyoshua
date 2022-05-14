@@ -31,7 +31,7 @@
 		"@testing-library/react": "^11.2.5",
 		"@testing-library/react-hooks": "^5.1.0",
 		"@types/node": "^12.12.21",
-		"@types/react": "^17.0.2",
+		"@types/react": "^17.0.30",
 		"@types/react-dom": "^16.9.4",
 		"@types/styled-components": "^5.1.14",
 		"@vercel/node": "^1.12.1",
