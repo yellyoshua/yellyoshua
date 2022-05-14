@@ -9,7 +9,11 @@ module.exports = {
 	},
 	optimizeFonts: true,
 	images: {
-		domains: ['cdn.buymeacoffee.com', 'media.graphcms.com'],
+		domains: [
+			'cdn.buymeacoffee.com',
+			'media.graphcms.com',
+			'media.graphassets.com',
+		],
 	},
 	swcMinify: true,
 };
