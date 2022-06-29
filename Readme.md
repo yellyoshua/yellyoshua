@@ -1,12 +1,11 @@
-<style>
-.title {
-    color: green;
-    font-weight:700;
-    font-size: 30px;
-}
+<style
+  type="text/css">
+h1 {color:red;}
+
+p {color:blue;}
 </style>
 
-<h1 align="left" class="title" style="font-weight:bold;">¡Hey! What's up 🤝</h1>
+<h1 align="left" style="font-weight:bold;">¡Hey! What's up 🤝</h1>
 
 </br>
 
