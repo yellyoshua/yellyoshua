@@ -52,9 +52,10 @@ of the Open Source! 🤓
 
 </br>
 
-<img src="https://github-readme-stats.vercel.app/api?username=yellyoshua&show_icons=true&locale=en&include_all_commits=true" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;max-width:390px" />
-
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=yellyoshua&show_icons=true&locale=en&layout=compact" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;max-width:320px" />
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=yellyoshua&show_icons=true&locale=en&include_all_commits=true" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;" width="390px" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=yellyoshua&show_icons=true&locale=en&layout=compact" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;" width="320px" />
+</p>
 
 </br>
 </br>
@@ -79,23 +80,21 @@ of the Open Source! 🤓
 
 <h2 align="left" style="font-weight:bold;">Referral links 💻</h2>
 
-<p style="columns: 2;column-gap: 1em;">
-  <a href="https://short.yoshualopez.com/digitalocean">
-    <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px" width="195"></img>
-  </a>
-  <a href="https://short.yoshualopez.com/coinbase">
-    <img src="https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/2dfd4ea3b623a7c0d8deb2ff445dee9e/Consumer_Wordmark.svg" alt="Coinbase Referral Badge" width="190" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
-  </a>
-  <a href="https://short.yoshualopez.com/letsdeel">
-    <img src="https://www.letsdeel.com/hubfs/deel-blue.svg" alt="Letsdeel Referral Badge" width="195" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
-  </a>
-  <a href="https://short.yoshualopez.com/platzi">
-    <img src="https://static.platzi.com/media/platzi-isotipo@2x.png" alt="Platzi Referral Badge" width="80" height="80" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
-  </a>
-  <a href="https://short.yoshualopez.com/cryptorefills">
-    <img src="https://www.cryptorefills.com/logo.57d1e7d5dfe6b9e0265e.svg" alt="CryptoRefills Referral Badge" width="230" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
-  </a>
-</p>
+<a href="https://short.yoshualopez.com/digitalocean">
+  <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px" width="195"></img>
+</a>
+<a href="https://short.yoshualopez.com/coinbase">
+  <img src="https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/2dfd4ea3b623a7c0d8deb2ff445dee9e/Consumer_Wordmark.svg" alt="Coinbase Referral Badge" width="190" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
+</a>
+<a href="https://short.yoshualopez.com/letsdeel">
+  <img src="https://www.letsdeel.com/hubfs/deel-blue.svg" alt="Letsdeel Referral Badge" width="195" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
+</a>
+<a href="https://short.yoshualopez.com/platzi">
+  <img src="https://static.platzi.com/media/platzi-isotipo@2x.png" alt="Platzi Referral Badge" width="80" height="80" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
+</a>
+<a href="https://short.yoshualopez.com/cryptorefills">
+  <img src="https://www.cryptorefills.com/logo.57d1e7d5dfe6b9e0265e.svg" alt="CryptoRefills Referral Badge" width="230" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
+</a>
 
 ---
 
