@@ -1,4 +1,12 @@
-<h1 align="left" style="font-weight:bold;">¡Hey! What's up 🤝</h1>
+<style>
+.title {
+    color: green;
+    font-weight:700;
+    font-size: 30px;
+}
+</style>
+
+<h1 align="left" class="title" style="font-weight:bold;">¡Hey! What's up 🤝</h1>
 
 </br>
 
