@@ -1,10 +1,3 @@
-<style
-  type="text/css">
-h1 {color:red;}
-
-p {color:blue;}
-</style>
-
 <h1 align="left" style="font-weight:bold;">¡Hey! What's up 🤝</h1>
 
 </br>
@@ -59,10 +52,9 @@ of the Open Source! 🤓
 
 </br>
 
-<p style="display:flex;justify-content:space-around;-webkit-justify-content:space-around;flex-wrap: wrap;align-items:start;">
-  <img src="https://github-readme-stats.vercel.app/api?username=yellyoshua&show_icons=true&locale=en&include_all_commits=true" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;max-width:390px" />
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=yellyoshua&show_icons=true&locale=en&layout=compact" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;max-width:320px" />
-</p>
+<img src="https://github-readme-stats.vercel.app/api?username=yellyoshua&show_icons=true&locale=en&include_all_commits=true" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;max-width:390px" />
+
+<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=yellyoshua&show_icons=true&locale=en&layout=compact" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;max-width:320px" />
 
 </br>
 </br>
@@ -87,7 +79,7 @@ of the Open Source! 🤓
 
 <h2 align="left" style="font-weight:bold;">Referral links 💻</h2>
 
-<p style="display:flex;justify-content:space-around;flex-wrap: wrap;align-items:center;">
+<p style="columns: 2;column-gap: 1em;">
   <a href="https://short.yoshualopez.com/digitalocean">
     <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px" width="195"></img>
   </a>
