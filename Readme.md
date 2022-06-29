@@ -52,9 +52,9 @@ of the Open Source! 🤓
 
 </br>
 
-<p style="display:flex;justify-content:space-around;flex-wrap: wrap;align-items:start;">
-  <img src="https://github-readme-stats.vercel.app/api?username=yellyoshua&show_icons=true&locale=en&include_all_commits=true" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;" />
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=yellyoshua&show_icons=true&locale=en&layout=compact" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;" />
+<p style="display:flex;justify-content:space-around;-webkit-justify-content:space-around;flex-wrap: wrap;align-items:start;">
+  <img src="https://github-readme-stats.vercel.app/api?username=yellyoshua&show_icons=true&locale=en&include_all_commits=true" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;max-width:390px" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=yellyoshua&show_icons=true&locale=en&layout=compact" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;max-width:320px" />
 </p>
 
 </br>
