@@ -75,6 +75,8 @@ of the Open Source! :nerd_face:
   </a>
 </p>
 
+</br>
+
 ---
 
 </br>
