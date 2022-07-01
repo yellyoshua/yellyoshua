@@ -100,10 +100,6 @@ of the Open Source! :nerd_face:
 
 </br>
 
----
-
-</br>
-
 <h2 align="left" style="font-weight:bold;">Referral links 💻</h2>
 
 <p align="left">
