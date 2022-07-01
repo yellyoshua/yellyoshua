@@ -49,13 +49,33 @@ of the Open Source! :nerd_face:
 
 </br>
 
+<h2 style="font-weight:bold;" align="left">The technologies that I've worked!</h2>
+
+</br>
+
+<p align="center">
+<img align="center" src="https://img.shields.io/badge/JavaScript-black.svg?style=flat-square&logo=javascript" height="25">
+<img align="center" src="https://img.shields.io/badge/TypeScript-black.svg?style=flat-square&logo=typescript" height="25">
+<img align="center" src="https://img.shields.io/badge/C-black.svg?style=flat-square&logo=c" height="25">
+<img align="center" src="https://img.shields.io/badge/Go-black.svg?style=flat-square&logo=go" height="25">
+<img align="center" src="https://img.shields.io/badge/Flutter-black.svg?style=flat-square&logo=flutter" height="25">
+</p>
+
+</br>
+
+</br>
+
 <h2 align="left" style="font-weight:bold;">GitHub statistics</h2>
 
 </br>
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=yellyoshua&show_icons=true&locale=en&include_all_commits=true" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;" width="390px" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs?username=yellyoshua&show_icons=true&locale=en&layout=compact" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;" width="320px" />
+<img src="https://github-readme-stats.vercel.app/api?username=yellyoshua&show_icons=true&locale=en&include_all_commits=true&bg_color=0d1117&text_color=ffffff" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;" width="390px" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=yellyoshua&show_icons=true&locale=en&layout=compact&bg_color=0d1117&text_color=ffffff" style="margin-top:10px;margin-bottom:10px;margin-left:5px;margin-right:5px;" width="320px" />
+</p>
+
+<p align="center">
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=yellyoshua&theme=dark&background=0d1117" />
 </p>
 
 </br>
@@ -73,6 +93,9 @@ of the Open Source! :nerd_face:
   <a href="mailto:me@yoshualopez.com">
     <img src="https://img.shields.io/badge/me@yoshualopez.com-black.svg?style=flat-square&logo=gmail">
   </a>
+  <a href="https://yoshualopez.com">
+    <img src="https://img.shields.io/badge/yoshualopez.com-black.svg?style=flat-square&logo=google-chrome&logoColor=white">
+  </a>
 </p>
 
 </br>
@@ -83,25 +106,35 @@ of the Open Source! :nerd_face:
 
 <h2 align="left" style="font-weight:bold;">Referral links 💻</h2>
 
+<p align="left">
 <a href="https://short.yoshualopez.com/digitalocean">
   <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px" width="195"></img>
 </a>
+</p>
 
+<p align="right">
 <a href="https://short.yoshualopez.com/coinbase">
   <img src="https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/2dfd4ea3b623a7c0d8deb2ff445dee9e/Consumer_Wordmark.svg" alt="Coinbase Referral Badge" width="190" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
 </a>
+</p>
 
+<p align="left">
 <a href="https://short.yoshualopez.com/letsdeel">
   <img src="https://www.letsdeel.com/hubfs/deel-blue.svg" alt="Letsdeel Referral Badge" width="195" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
 </a>
+</p>
 
+<p align="right">
 <a href="https://short.yoshualopez.com/platzi">
   <img src="https://static.platzi.com/media/platzi-isotipo@2x.png" alt="Platzi Referral Badge" width="80" height="80" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
 </a>
+</p>
 
+<p align="left">
 <a href="https://short.yoshualopez.com/cryptorefills">
   <img src="https://www.cryptorefills.com/logo.57d1e7d5dfe6b9e0265e.svg" alt="CryptoRefills Referral Badge" width="230" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
 </a>
+</p>
 
 ---
 
