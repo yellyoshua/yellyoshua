@@ -49,7 +49,7 @@ of the Open Source! :nerd_face:
 
 </br>
 
-<h2 style="font-weight:bold;" align="left">The technologies that I've worked!</h2>
+<h2 style="font-weight:bold;" align="left">Languages that I've worked!</h2>
 
 </br>
 
