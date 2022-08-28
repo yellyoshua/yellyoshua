@@ -1,4 +1,12 @@
-import { Asset } from './interfaces';
+import { SocialLink, Asset } from './interfaces';
+
+export interface ApplicationReducer {
+	name: string;
+	API_URL?: string;
+	socialLinks: SocialLink[];
+	copyright: string;
+	projects: Project[];
+}
 
 export interface Project {
 	id: string;
@@ -16,8 +24,4 @@ export interface Project {
 
 export interface ProjectWithSlug {
 	slug: string;
-}
-
-export interface ProjectsReducer {
-	projects: Project[];
 }

@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { useAppStore } from 'src/flux/store';
+import { applicationStore } from '@/app/store/application.store';
 
 interface Props {}
 
 const SearchBackup = ({}: Props) => {
 	const router = useRouter();
 
-	const apiURL = useAppStore.getState().API_URL;
+	const apiURL = applicationStore.getState().API_URL;
 	const [isSubmitting, setSubmitting] = useState(false);
 
 	const search = useFormik({

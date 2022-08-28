@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { Text } from '@/app/components';
 import { ButtonLink } from './ButtonLink';
-import { useProjectsStore } from '@/app/flux/stores';
+import { applicationStore } from '@/app/store/application.store';
 
 export function Projects() {
-	const projects = useProjectsStore((state) => state.projects);
+	const projects = applicationStore(state => state.projects);
 
 	return (
 		<div className='w-full'>

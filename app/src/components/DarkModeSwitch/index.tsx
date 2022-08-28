@@ -1,18 +1,17 @@
 import { useEffect } from 'react';
 import Switch from 'react-switch';
-import { changeDarkMode } from '@/app/flux/actions';
-import { useThemeStore } from '@/app/flux/stores';
+import { changeDarkMode } from '@/app/store/actions';
 import MoonIcon from '@heroicons/react/outline/MoonIcon';
 import SunIcon from '@heroicons/react/outline/SunIcon';
 import { isBrowser } from '@/app/utils/storage';
+import { appearanceStore } from '@/app/store/appearance.store';
 
 export const DarkModeSwitch = () => {
-	const isDarkMode = useThemeStore((state) => state.darkMode);
+	const isDarkMode = appearanceStore((state) => state.darkMode);
 
 	useEffect(() => {
 		if (isBrowser) {
-			const timesChangedDarkMode =
-				useThemeStore.getState().timesChangedDarkMode;
+			const timesChangedDarkMode = appearanceStore.getState().timesChangedDarkMode;
 
 			if (
 				window.matchMedia &&
@@ -24,6 +23,7 @@ export const DarkModeSwitch = () => {
 				changeDarkMode(isDarkMode, false);
 			}
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	if (!isBrowser) {

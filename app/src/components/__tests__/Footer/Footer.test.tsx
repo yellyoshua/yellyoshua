@@ -1,19 +1,19 @@
 import { render, act } from '@testing-library/react';
 import { Footer } from '@/app/components/Footer';
-import { useAppStore } from '@/app/flux/stores';
+import { applicationStore } from '@/app/store/application.store';
 
-const initialState = useAppStore.getState();
+const initialState = applicationStore.getState();
 
 describe('Footer component', () => {
 	beforeEach(() => {
-		useAppStore.setState(initialState, true);
+		applicationStore.setState(initialState, true);
 	});
 
 	it('should render and check copyright', async () => {
 		const footer = render(<Footer />);
 
 		act(() => {
-			useAppStore.setState((prev) => ({ ...prev, copyright: 'Space X' }));
+			applicationStore.setState((prev) => ({ ...prev, copyright: 'Space X' }));
 		});
 
 		const title = await footer.findByText(/@ Space X/i);

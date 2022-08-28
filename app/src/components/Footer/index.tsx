@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useAppStore } from '@/app/flux/store';
 import { DarkModeSwitch, SeparateLine } from '@/app/components';
 import { SocialLinksContainer } from './SocialLinksContainer';
+import { applicationStore } from '@/app/store/application.store';
 
 export function Footer() {
-	const copyright = useAppStore((state) => state.copyright);
+	const copyright = applicationStore.getState().copyright;
 
 	const renderBuyMeACoffe = () => (
 		<div className='flex justify-center select-none mt-3 mb-8'>

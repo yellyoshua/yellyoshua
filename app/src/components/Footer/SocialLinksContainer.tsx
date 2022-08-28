@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { useAppStore } from '@/app/flux/stores';
 import { Tooltip } from '@/app/components';
 import DownArrow from '@/app/assets/icons/DownArrow';
+import { applicationStore } from '@/app/store/application.store';
 
 export const SocialLinksContainer = () => {
 	const [activeHover, setActiveHover] = useState(false);
-	const socialLinks = useAppStore((state) => state.socialLinks);
+	const socialLinks = applicationStore((state) => state.socialLinks);
 
 	return (
 		<div

@@ -1,9 +1,9 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { Layout } from '@/app/ui';
-import { getProjectBySlug, getProjectsSlug } from '@/app/flux/actions';
 import { ProjectDetails, RenderMarkdown } from '@/app/components';
 import { Project } from '@/app/interfaces';
 import { TIMEOUT_TIMES } from '@/app/enums/app';
+import { ProjectsController } from '@/app/api/projects/controllers';
 
 interface ProjectProps {
 	project: Project;
@@ -14,20 +14,20 @@ export default function Projects({ project }: ProjectProps) {
 		<Layout title={project.title}>
 			<ProjectDetails {...project} />
 			<RenderMarkdown
-				html
 				className='mx-auto px-5 sm:px-12 py-5 font-arvo'
-				style={{ maxWidth: 800 }}
-				markdown={project.content ? project.content.html || '' : ''}
+				markdown={project.content?.html}
 			/>
 		</Layout>
 	);
 }
 
+const projectsController = new ProjectsController();
+
 export const getStaticProps: GetStaticProps<ProjectProps> = async (ctx) => {
 	try {
 		const permaLink = ctx.params?.slug ? (ctx.params?.slug as string) : '';
 
-		const project = await getProjectBySlug(permaLink);
+		const project = await projectsController.getProjectBySlug(permaLink);
 
 		return {
 			props: { permaLink, project },
@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async (ctx) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const projects = await getProjectsSlug();
+	const projects = await projectsController.getProjectsSlug();
 
 	return {
 		paths: projects.map(({ slug }) => ({ params: { slug } })),
