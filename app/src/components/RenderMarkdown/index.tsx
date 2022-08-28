@@ -16,7 +16,7 @@ export const RenderMarkdown = ({markdown, ...props}: PropTypes) => {
   }, [isDarkMode]);
 
 	return (
-		<div {...props} className='bg-white dark:bg-gray-900 w-full'>
+		<div {...props} className='bg-white dark:bg-gray-900 transition-colors duration-500 w-full'>
 			<article
 				style={props.style}
 				className={`prose prose-xl md:prose-lg ${props.className}`}
