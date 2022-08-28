@@ -1,13 +1,11 @@
-import { useThemeStore } from 'src/flux/store';
+import { appearanceStore } from '../appearance.store';
 
-export const changeDarkMode = (
-	active: boolean,
-	incremental: boolean = true
-) => {
+export const changeDarkMode = (active: boolean, incremental: boolean = true) => {
 	active
 		? document.documentElement.classList.add('dark')
 		: document.documentElement.classList.remove('dark');
-	return useThemeStore.setState((prev) => ({
+
+	return appearanceStore.setState((prev) => ({
 		...prev,
 		darkMode: active,
 		timesChangedDarkMode: incremental
@@ -16,9 +14,8 @@ export const changeDarkMode = (
 	}));
 };
 
-// TODO: REMOVE this and test's
 export const toggleDarkMode = () => {
-	return useThemeStore.setState((prev) => ({
+	return appearanceStore.setState((prev) => ({
 		...prev,
 		darkMode: !prev.darkMode,
 	}));

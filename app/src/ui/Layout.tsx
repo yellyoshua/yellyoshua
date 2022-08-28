@@ -16,15 +16,6 @@ export function Layout({ children, title = APP_NAME }: LayoutProps) {
 				<link rel='manifest' href='/manifest.json' />
 				<link rel='preconnect' href='https://fonts.gstatic.com' />
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
-
-				<link
-					href='https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'
-					rel='stylesheet'
-				></link>
-				<link
-					href='https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap'
-					rel='stylesheet'
-				></link>
 			</Head>
 			<div className='bg-white dark:bg-gray-900 min-h-screen transition-colors duration-500'>
 				<Header />

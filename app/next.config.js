@@ -11,6 +11,7 @@ module.exports = {
 	images: {
 		domains: [
 			'cdn.buymeacoffee.com',
+			'buymeacoffee.com',
 			'media.graphcms.com',
 			'media.graphassets.com',
 		],

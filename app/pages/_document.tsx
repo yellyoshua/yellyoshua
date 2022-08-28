@@ -15,7 +15,10 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang='es'>
-				<Head />
+				<Head>
+					<link href='https://fonts.googleapis.com/css2?family=Varela+Round&display=swap' rel='stylesheet'></link>
+					<link href='https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap' rel='stylesheet'></link>
+				</Head>
 				<body>
 					<Main />
 					<NextScript />

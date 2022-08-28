@@ -1,28 +1,28 @@
-import { useEffect } from 'react';
 import { GetStaticProps } from 'next';
 import { Layout, Projects, SortResumeAboutMe } from '@/app/ui/index';
-import { useProjectsStore } from '@/app/flux/stores';
-import { getAllProjects } from '@/app/flux/actions';
 import { Project } from '@/app/interfaces';
-interface HomePageProps {
+import { ProjectsController } from '@/app/api/projects/controllers';
+import { ApplicationProvider } from '@/app/store/Providers';
+
+interface PropTypes {
 	projects: Project[];
 }
 
-export default function HomePage({ projects = [] }: HomePageProps) {
-	useEffect(() => {
-		projects && useProjectsStore.setState((prev) => ({ ...prev, projects }));
-	}, []);
-
+export default function HomePage({ projects = [] }: PropTypes) {
 	return (
-		<Layout>
-			<SortResumeAboutMe />
-			<Projects />
-		</Layout>
+		<ApplicationProvider value={{projects}}>
+			<Layout>
+				<SortResumeAboutMe />
+				<Projects />
+			</Layout>
+		</ApplicationProvider>
 	);
 }
 
-export const getStaticProps: GetStaticProps<HomePageProps> = async ({}) => {
-	const projects: Project[] = await getAllProjects();
+const projectsController = new ProjectsController();
+
+export const getStaticProps: GetStaticProps<PropTypes> = async ({}) => {
+	const projects = await projectsController.getAllProjects();
 
 	return {
 		props: { projects },
