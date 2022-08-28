@@ -57,11 +57,14 @@ export const getStaticProps: GetStaticProps<PagesProps> = async (ctx) => {
 	}
 };
 
+const pagesToFilter = ['contact'];
+
 export const getStaticPaths: GetStaticPaths = async () => {
 	const pages = await pagesController.getPagesSlug();
+	const filteredPages = pages.filter((page) => !pagesToFilter.includes(page.slug));
 
 	return {
-		paths: pages.map(({ slug }) => ({ params: { slug } })),
+		paths: filteredPages.map(({ slug }) => ({ params: { slug } })),
 		fallback: 'blocking',
 	};
 };
