@@ -1,14 +1,11 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps } from 'next';
 import { Layout } from '@/app/ui';
 import { Page } from '@/app/interfaces';
-import {
-	PagesRecommendation,
-	RenderMarkdown,
-	PostDetails,
-} from '@/app/components';
+import { RenderMarkdown, PostDetails } from '@/app/components';
 import { TIMEOUT_TIMES } from '@/app/enums/app';
 import { PagesController } from '@/app/api/pages/controllers';
 import { PageProvider } from '@/app/store/Providers';
+import ContactForm from '@/app/ui/ContactForm';
 
 interface PagesProps {
 	page: Page;
@@ -28,10 +25,7 @@ export default function Pages({ page, recommendations }: PagesProps) {
 					className='mx-auto px-5 sm:px-12 py-5'
 					markdown={page.content?.html}
 				/>
-				<PagesRecommendation
-					className='mx-auto px-5 py-5'
-					style={{ maxWidth: 800 }}
-				/>
+				<ContactForm />
 			</Layout>
 		</PageProvider>
 	);
@@ -44,27 +38,15 @@ export const getStaticProps: GetStaticProps<PagesProps> = async (ctx) => {
 		const permaLink = ctx.params?.slug ? (ctx.params?.slug as string) : '';
 
 		const [page, recommendations] = await Promise.all([
-			pagesController.getPageBySlug(permaLink),
-			pagesController.getPagesRecommendation(permaLink),
+			pagesController.getPageBySlug('contact'),
+			pagesController.getPagesRecommendation('contact'),
 		]);
 
 		return {
 			props: { permaLink, page, recommendations },
-			revalidate: TIMEOUT_TIMES.TEN_MINUTES_IN_SECONDS,
+			revalidate: TIMEOUT_TIMES.FIFTEEN_MINUTES_IN_SECONDS,
 		};
 	} catch (error) {
-		return { notFound: true, revalidate: TIMEOUT_TIMES.TEN_MINUTES_IN_SECONDS };
+		return { notFound: true, revalidate: TIMEOUT_TIMES.FIFTEEN_MINUTES_IN_SECONDS };
 	}
-};
-
-const pagesToFilter = ['contact'];
-
-export const getStaticPaths: GetStaticPaths = async () => {
-	const pages = await pagesController.getPagesSlug();
-	const filteredPages = pages.filter((page) => !pagesToFilter.includes(page.slug));
-
-	return {
-		paths: filteredPages.map(({ slug }) => ({ params: { slug } })),
-		fallback: 'blocking',
-	};
 };

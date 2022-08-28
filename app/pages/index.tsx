@@ -3,6 +3,7 @@ import { Layout, Projects, SortResumeAboutMe } from '@/app/ui/index';
 import { Project } from '@/app/interfaces';
 import { ProjectsController } from '@/app/api/projects/controllers';
 import { ApplicationProvider } from '@/app/store/Providers';
+import { TIMEOUT_TIMES } from '@/app/enums/app';
 
 interface PropTypes {
 	projects: Project[];
@@ -26,6 +27,6 @@ export const getStaticProps: GetStaticProps<PropTypes> = async ({}) => {
 
 	return {
 		props: { projects },
-		revalidate: 900,
+		revalidate: TIMEOUT_TIMES.FIFTEEN_MINUTES_IN_SECONDS,
 	};
 };

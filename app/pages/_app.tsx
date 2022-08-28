@@ -5,8 +5,8 @@ import localizedFormat from 'dayjs/plugin/localizedFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
-import 'tailwindcss/tailwind.css';
 import 'tailwindcss/base.css';
+import 'tailwindcss/tailwind.css';
 
 dayjs.extend(relativeTime);
 dayjs.extend(localizedFormat);
