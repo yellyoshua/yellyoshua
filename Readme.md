@@ -102,35 +102,28 @@ of the Open Source! :nerd_face:
 
 <h2 align="left" style="font-weight:bold;">Referral links 💻</h2>
 
-<p align="left">
-<a href="https://short.yoshualopez.com/digitalocean">
-  <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px" width="195"></img>
-</a>
+</br>
+
+<p align="center">
+
+| <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" width="195" align="right"></img> | <img src="https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/2dfd4ea3b623a7c0d8deb2ff445dee9e/Consumer_Wordmark.svg" alt="Coinbase Referral Badge" width="190" align="right"></img> | <img src="https://www.cryptorefills.com/logo.57d1e7d5dfe6b9e0265e.svg" alt="CryptoRefills Referral Badge" width="230" align="right"></img>
+| ------------- | ------------- | ------------- |
+| <p style="font-weight:bold;" align="center">[Digital Ocean](https://short.yoshualopez.com/digitalocean)</p> | <p style="font-weight:bold;" align="center">[Coinbase](https://short.yoshualopez.com/coinbase)</p> | <p style="font-weight:bold;" align="center">[CryptoRefills](https://short.yoshualopez.com/cryptorefills)</p>
+
 </p>
 
-<p align="right">
-<a href="https://short.yoshualopez.com/coinbase">
-  <img src="https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/2dfd4ea3b623a7c0d8deb2ff445dee9e/Consumer_Wordmark.svg" alt="Coinbase Referral Badge" width="190" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
-</a>
+</br>
+
+<p align="center">
+
+| <img src="https://www.letsdeel.com/hubfs/deel-blue.svg" alt="Letsdeel Referral Badge" width="190" align="right"></img> | <img src="https://static.platzi.com/media/platzi-isotipo@2x.png" alt="Platzi Referral Badge" width="80" height="80" align="right"></img> | 
+| ------------- | ------------- | 
+| <p style="font-weight:bold;" align="center">[Deel](https://short.yoshualopez.com/letsdeel)</p> | <p style="font-weight:bold;" align="center">[Platzi](https://short.yoshualopez.com/platzi/coinbase)</p> | 
+
 </p>
 
-<p align="left">
-<a href="https://short.yoshualopez.com/letsdeel">
-  <img src="https://www.letsdeel.com/hubfs/deel-blue.svg" alt="Letsdeel Referral Badge" width="195" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
-</a>
-</p>
+</br>
 
-<p align="right">
-<a href="https://short.yoshualopez.com/platzi">
-  <img src="https://static.platzi.com/media/platzi-isotipo@2x.png" alt="Platzi Referral Badge" width="80" height="80" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
-</a>
-</p>
-
-<p align="left">
-<a href="https://short.yoshualopez.com/cryptorefills">
-  <img src="https://www.cryptorefills.com/logo.57d1e7d5dfe6b9e0265e.svg" alt="CryptoRefills Referral Badge" width="230" style="margin-top:10px;margin-bottom:10px;margin-left:10px;margin-right:10px"></img>
-</a>
-</p>
 
 ---
 
