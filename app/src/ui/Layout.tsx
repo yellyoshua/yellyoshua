@@ -37,11 +37,6 @@ export function Layout({ children, title = APP_NAME }: LayoutProps) {
 					})(window, document, "clarity", "script", "d7wkdxyom1");
 				`}}
 			></script>
-			<style global jsx>{`
-				img {
-					pointer-events: none;
-				}
-			`}</style>
 		</Fragment>
 	);
 }
