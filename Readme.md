@@ -118,7 +118,7 @@ of the Open Source! :nerd_face:
 
 | <img src="https://www.letsdeel.com/hubfs/deel-blue.svg" alt="Letsdeel Referral Badge" width="190" align="right"></img> | <img src="https://static.platzi.com/media/platzi-isotipo@2x.png" alt="Platzi Referral Badge" width="80" height="80" align="right"></img> | 
 | ------------- | ------------- | 
-| <p style="font-weight:bold;" align="center">[Deel](https://short.yoshualopez.com/letsdeel)</p> | <p style="font-weight:bold;" align="center">[Platzi](https://short.yoshualopez.com/platzi/coinbase)</p> | 
+| <p style="font-weight:bold;" align="center">[Deel](https://short.yoshualopez.com/letsdeel)</p> | <p style="font-weight:bold;" align="center">[Platzi](https://short.yoshualopez.com/platzi)</p> | 
 
 </p>
 
