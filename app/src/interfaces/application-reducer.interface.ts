@@ -20,6 +20,7 @@ export interface Project {
 	repository: string | null;
 	createdAt: string;
 	updatedAt: string;
+	keywords?: string;
 }
 
 export interface ProjectWithSlug {

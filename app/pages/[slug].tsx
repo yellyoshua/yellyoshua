@@ -1,14 +1,10 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { Layout } from '@/app/ui';
 import { Page } from '@/app/interfaces';
-import {
-	PagesRecommendation,
-	RenderMarkdown,
-	PostDetails,
-} from '@/app/components';
 import { TIMEOUT_TIMES } from '@/app/enums/app';
 import { PagesController } from '@/app/api/pages/controllers';
-import { PageProvider } from '@/app/store/Providers';
+import PagesLayout from '@/app/layouts/PagesLayout';
+import PageContent from '@/app/scenes/PageContent';
+import SuggestedPages from '@/app/scenes/SuggestedPages';
 
 interface PagesProps {
 	page: Page;
@@ -17,23 +13,10 @@ interface PagesProps {
 
 export default function Pages({ page, recommendations }: PagesProps) {
 	return (
-		<PageProvider value={{content: page, recommendations}}>
-			<Layout title={page.title}>
-				<PostDetails
-					title={page.title}
-					createdAt={page.createdAt}
-					updatedAt={page.updatedAt}
-				/>
-				<RenderMarkdown
-					className='mx-auto px-5 sm:px-12 py-5'
-					markdown={page.content?.html}
-				/>
-				<PagesRecommendation
-					className='mx-auto px-5 py-5'
-					style={{ maxWidth: 800 }}
-				/>
-			</Layout>
-		</PageProvider>
+		<PagesLayout page={page}>
+			<PageContent page={page}/>
+			<SuggestedPages pages={recommendations} />
+		</PagesLayout>
 	);
 }
 

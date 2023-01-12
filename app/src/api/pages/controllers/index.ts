@@ -28,7 +28,7 @@ export class PagesController {
 	}
 
 	async getPagesRecommendation(slug: string): Promise<Page[]> {
-		const { data } = await this.pageRepository.getPagesRecommendation(slug);
+		const { data } = await this.pageRepository.getPagesRecommendation(slug, 15);
 
 		const { pages = null } = data || {};
 

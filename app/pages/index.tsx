@@ -1,9 +1,10 @@
 import { GetStaticProps } from 'next';
-import { Layout, Projects, SortResumeAboutMe } from '@/app/ui/index';
 import { Project } from '@/app/interfaces';
 import { ProjectsController } from '@/app/api/projects/controllers';
-import { ApplicationProvider } from '@/app/store/Providers';
 import { TIMEOUT_TIMES } from '@/app/enums/app';
+import MainLayout from '@/app/layouts/MainLayout';
+import Projects from '@/app/scenes/Projects';
+import QuickResume from '@/app/scenes/QuickResume';
 
 interface PropTypes {
 	projects: Project[];
@@ -11,12 +12,10 @@ interface PropTypes {
 
 export default function HomePage({ projects = [] }: PropTypes) {
 	return (
-		<ApplicationProvider value={{projects}}>
-			<Layout>
-				<SortResumeAboutMe />
-				<Projects />
-			</Layout>
-		</ApplicationProvider>
+		<MainLayout>
+			<QuickResume />
+			<Projects projects={projects} />
+		</MainLayout>
 	);
 }
 
