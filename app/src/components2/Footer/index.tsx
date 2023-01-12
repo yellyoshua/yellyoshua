@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { DarkModeSwitch, SeparateLine } from '@/app/components';
+import DarkModeSwitch from '@/app/components2/DarkModeSwitch';
+import Separator from '@/app/components2/Separator';
 import { SocialLinksContainer } from './SocialLinksContainer';
 import { applicationStore } from '@/app/store/application.store';
 
@@ -40,7 +41,7 @@ export default function Footer({ children }: PropTypes) {
 		<footer className='pt-10 sm:mt-10'>
 			{children}
 			<SocialLinksContainer />
-			<SeparateLine size='50' />
+			<Separator size='50' />
 
 			{renderQuickActions()}
 

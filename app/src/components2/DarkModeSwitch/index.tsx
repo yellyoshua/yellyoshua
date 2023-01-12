@@ -6,7 +6,7 @@ import SunIcon from '@heroicons/react/outline/SunIcon';
 import { isBrowser } from '@/app/utils/storage';
 import { appearanceStore } from '@/app/store/appearance.store';
 
-export const DarkModeSwitch = () => {
+export default function DarkModeSwitch() {
 	const isDarkMode = appearanceStore((state) => state.darkMode);
 
 	useEffect(() => {

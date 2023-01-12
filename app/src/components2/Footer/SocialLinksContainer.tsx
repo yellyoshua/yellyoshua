@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Tooltip } from '@/app/components';
+import Tooltip from '@/app/components2/Tooltip';
 import DownArrow from '@/app/assets/icons/DownArrow';
 import { applicationStore } from '@/app/store/application.store';
 
