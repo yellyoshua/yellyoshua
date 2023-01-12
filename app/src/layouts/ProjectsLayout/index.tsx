@@ -1,22 +1,42 @@
-import React, { ReactNode, Fragment } from 'react';
+import React, { Fragment } from "react";
+import { Project } from "@/app/interfaces";
 import Head from 'next/head';
-import { APP_NAME } from '@/app/config/app';
 import Header from '@/app/components2/Header';
 import Footer from '@/app/components2/Footer';
 
-type LayoutProps = { children?: ReactNode; title?: string };
+interface PropTypes {
+	children?: React.ReactNode;
+	project: Project;
+}
 
-export function MainLayout({ children, title = APP_NAME }: LayoutProps) {
+export default function ProjectsLayout({ children, project }: PropTypes) {
 	return (
 		<Fragment>
 			<Head>
 				<meta charSet='utf-8' />
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-				<title>{title}</title>
+				<title>{project.title}</title>
 				<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
 				<link rel='manifest' href='/manifest.json' />
 				<link rel='preconnect' href='https://fonts.gstatic.com' />
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
+
+				<meta name="description" content={project.description} />
+				<meta name="keywords" content={project.keywords} />
+				{/* <meta name="author" content={project.author} /> */}
+				<meta name="robots" content="index, follow" />
+				<meta name="googlebot" content="index, follow" />
+				<meta name="google" content="nositelinkssearchbox" />
+				<meta name="google" content="notranslate" />
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:image:alt" content={project.title} />
+				{/* <meta property="og:url" content={project.url} /> */}
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content={project.title} />
+				<meta property="og:description" content={project.description} />
+				{/* <meta property="og:image" content={project.image} /> */}
+				<meta property="og:site_name" content={project.title} />
+				<meta property="og:locale" content="en_US" />
 			</Head>
 			<div className='bg-white dark:bg-gray-900 min-h-screen transition-colors duration-500'>
 				<Header />

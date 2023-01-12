@@ -1,9 +1,9 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { Layout } from '@/app/ui';
-import { ProjectDetails, RenderMarkdown } from '@/app/components';
 import { Project } from '@/app/interfaces';
 import { TIMEOUT_TIMES } from '@/app/enums/app';
 import { ProjectsController } from '@/app/api/projects/controllers';
+import ProjectsLayout from '@/app/layouts/ProjectsLayout';
+import ProjectContent from '@/app/scenes/ProjectContent';
 
 interface ProjectProps {
 	project: Project;
@@ -11,13 +11,9 @@ interface ProjectProps {
 
 export default function Projects({ project }: ProjectProps) {
 	return (
-		<Layout title={project.title}>
-			<ProjectDetails {...project} />
-			<RenderMarkdown
-				className='mx-auto px-5 sm:px-12 py-5 font-arvo'
-				markdown={project.content?.html}
-			/>
-		</Layout>
+		<ProjectsLayout project={project}>
+			<ProjectContent project={project} />
+		</ProjectsLayout>
 	);
 }
 
