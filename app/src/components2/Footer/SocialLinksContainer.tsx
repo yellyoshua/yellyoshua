@@ -14,9 +14,9 @@ export const SocialLinksContainer = () => {
 		>
 			<div className='py-3'>
 				<p
-					className={`text-center text-black dark:text-white font-bold text-2xl font-arvo uppercase antialiased`}
+					className={`text-center text-black dark:text-white font-bold text-2xl font-arvo antialiased`}
 				>
-					Connect WITH ME
+					Get in touch with me
 				</p>
 				<DownArrow
 					className={`m-auto mt-10 mb-5 ${
@@ -34,7 +34,7 @@ export const SocialLinksContainer = () => {
 									<social.icon
 										width='24'
 										height='24'
-										className='fill-current text-gray-500 hover:text-black dark:hover:text-white transition-all'
+										className='text-gray-500 hover:text-black dark:hover:text-white transition-all'
 									/>
 								</div>
 							</a>

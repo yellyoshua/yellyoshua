@@ -2,10 +2,13 @@ import Image from 'next/image';
 import Text from '@/app/components2/Text';
 import {Project} from '@/app/interfaces';
 import ButtonLink from './components/ButtonLink';
+import ProjectStatus from '@/app/components2/ProjectStatus';
 
 interface PropTypes {
 	projects: Project[]
 }
+
+
 
 export default function Projects({projects}: PropTypes) {
 	return (
@@ -37,15 +40,7 @@ export default function Projects({projects}: PropTypes) {
 										{project.description}
 									</Text>
 									<div className='w-full my-3'>
-										<Text
-											className={`text-xs text-white m-auto ${
-												project.isDevelopment ? 'bg-red-600' : 'bg-green-600'
-											} w-max px-1 py-1 leading-none`}
-										>
-											{project.isDevelopment
-												? 'Proyecto en desarrollo'
-												: 'Proyecto terminado'}
-										</Text>
+                    <ProjectStatus status={project.projectStatus} />
 									</div>
 
 									<div className='flex flex-col'>

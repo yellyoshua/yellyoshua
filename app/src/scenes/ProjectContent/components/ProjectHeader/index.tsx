@@ -4,23 +4,13 @@ import FireIcon from '@heroicons/react/solid/FireIcon';
 import ExternalLinkIcon from '@heroicons/react/solid/ExternalLinkIcon';
 import CodeIcon from '@heroicons/react/solid/CodeIcon';
 import BoxLabel from '@/app/components2/BoxLabel';
-
+import ProjectStatus from "@/app/components2/ProjectStatus";
 
 interface PropTypes {
 	project: Project;
 }
 
 export default function ProjectHeader({project}: PropTypes) {
-	const renderDevelopmentStatus = (underDevelopment: boolean) => (
-		<p
-			className={`${
-				underDevelopment ? 'bg-red-500 text-white' : 'bg-green-700 text-white'
-			} px-1`}
-		>
-			{underDevelopment ? 'In development' : 'Deployed'}
-		</p>
-	);
-
 	const renderPreviewLink = (link: string) => (
 		<a rel='noopener noreferrer' target='_blank' href={link} className='m-auto'>
 			<p className='flex items-center justify-center text-sky-700 bg-white px-2 py-1'>
@@ -41,7 +31,7 @@ export default function ProjectHeader({project}: PropTypes) {
 	);
 
 	return (
-		<section className='px-2 py-1 m-auto'>
+		<section className='px-2 py-2 m-auto'>
 			<h1 className='text-center text-4xl font-bold font-jost dark:text-white'>
 				{project.title}
 			</h1>
@@ -51,7 +41,7 @@ export default function ProjectHeader({project}: PropTypes) {
 			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2'>
 				<BoxLabel
 					label='Status:'
-					content={renderDevelopmentStatus(project.isDevelopment)}
+					content={<ProjectStatus status={project.projectStatus} />}
 					icon={
 						<StatusOnlineIcon
 							className='mr-2 text-yellow-500 dark:text-white'
