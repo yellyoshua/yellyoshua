@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@apollo/client": "^3.4.16",
 		"@heroicons/react": "^1.0.5",
+		"@sentry/nextjs": "^7.75.1",
 		"dayjs": "1.10.7",
 		"formik": "^2.2.6",
 		"graphql": "^16.0.1",
