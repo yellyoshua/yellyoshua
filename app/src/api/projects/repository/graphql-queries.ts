@@ -8,6 +8,7 @@ export const GET_ALL_PROJECTS = gql`
 			slug
 			description
 			isDevelopment
+			projectStatus
 			externalLink
 			keywords
 			backdrop {
@@ -47,6 +48,7 @@ export const GET_PROJECT_BY_SLUG = gql`
 				html
 			}
 			isDevelopment
+			projectStatus
 			externalLink
 			backdrop {
 				...backdropFields

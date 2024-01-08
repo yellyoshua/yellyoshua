@@ -3,6 +3,7 @@ import { LinkedinAlt } from '../assets/icons/LinkedinAlt';
 import { TwitterAlt } from '../assets/icons/TwitterAlt';
 import { Instagram } from '../assets/icons/Instagram';
 import { TelegramAlt } from '../assets/icons/TelegramAlt';
+import { GithubAlt } from '../assets/icons/GithubAlt';
 
 export const APP_NAME: string = 'Yoshua Lopez | YELL';
 
@@ -11,24 +12,29 @@ export const COPYRIGHT: string =
 
 export const SOCIAL_LINKS: SocialLink[] = [
 	{
-		name: 'Linkedin',
-		icon: LinkedinAlt,
-		url: 'https://www.linkedin.com/in/yellyoshua/',
-	},
-	{
 		name: 'Twitter',
 		icon: TwitterAlt,
-		url: 'https://twitter.com/yellyoshua/',
+		url: 'https://short.yoshualopez.com/twitter',
 	},
 	{
 		name: 'Instagram',
 		icon: Instagram,
-		url: 'https://www.instagram.com/yellyoshua/',
+		url: 'https://short.yoshualopez.com/instagram',
+	},
+	{
+		name: 'Linkedin',
+		icon: LinkedinAlt,
+		url: 'https://short.yoshualopez.com/linkedin',
+	},
+	{
+		name: 'Github',
+		icon: GithubAlt,
+		url: 'https://short.yoshualopez.com/github',
 	},
 	{
 		name: 'Telegram',
 		icon: TelegramAlt,
-		url: 'https://t.me/yellyoshua/',
+		url: 'https://short.yoshualopez.com/telegram',
 	},
 ];
 

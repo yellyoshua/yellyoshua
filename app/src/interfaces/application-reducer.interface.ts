@@ -13,6 +13,7 @@ export interface Project {
 	title: string;
 	slug: string;
 	description: string;
+	projectStatus:  'forgotten' | 'development' | 'production' | 'archived';
 	content: { html?: string } | null;
 	isDevelopment: boolean;
 	externalLink: string | null;
