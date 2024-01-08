@@ -18,7 +18,6 @@ export interface Project {
 	externalLink: string | null;
 	backdrop: Asset | null;
 	repository: string | null;
-  projectStatus: 'development' | 'production' | 'forgotten';
 	createdAt: string;
 	updatedAt: string;
 	keywords?: string;
