@@ -1,14 +1,13 @@
 import { SocialLink } from 'src/interfaces';
 import { LinkedinAlt } from '../assets/icons/LinkedinAlt';
 import { TwitterAlt } from '../assets/icons/TwitterAlt';
-import { Instagram } from '../assets/icons/Instagram';
 import { TelegramAlt } from '../assets/icons/TelegramAlt';
 import { GithubAlt } from '../assets/icons/GithubAlt';
+import { Instagram } from '../assets/icons/Instagram';
 
-export const APP_NAME: string = 'Yoshua Lopez | YELL';
+export const APP_NAME: string = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
 
-export const COPYRIGHT: string =
-	'Copyright 2021 Yoshua López. All Rights Reserved.';
+export const COPYRIGHT: string = 'Copyright 2023 Yoshua López. All Rights Reserved.';
 
 export const SOCIAL_LINKS: SocialLink[] = [
 	{
@@ -65,4 +64,9 @@ export const PROJECTS = [
 		development: false,
 		isExternalLink: true,
 	},
+  {
+    name: 'Github',
+    icon: GithubAlt,
+    url: 'https://short.yoshualopez.com/github',
+  }
 ];

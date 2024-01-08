@@ -15,10 +15,10 @@ export interface Project {
 	description: string;
 	projectStatus:  'forgotten' | 'development' | 'production' | 'archived';
 	content: { html?: string } | null;
-	isDevelopment: boolean;
 	externalLink: string | null;
 	backdrop: Asset | null;
 	repository: string | null;
+  projectStatus: 'development' | 'production' | 'forgotten';
 	createdAt: string;
 	updatedAt: string;
 	keywords?: string;

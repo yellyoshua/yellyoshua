@@ -13,7 +13,6 @@ dayjs.extend(relativeTime);
 dayjs.extend(localizedFormat);
 dayjs.extend(utc);
 dayjs.extend(timezone);
-dayjs.tz.setDefault('America/Guayaquil');
 dayjs.locale('en');
 
 function MyApp({ Component, pageProps }: AppProps) {

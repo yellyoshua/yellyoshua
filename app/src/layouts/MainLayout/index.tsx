@@ -18,7 +18,7 @@ export default function MainLayout({ children, title = APP_NAME }: LayoutProps) 
 				<link rel='preconnect' href='https://fonts.gstatic.com' />
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 			</Head>
-			<div className='bg-white dark:bg-gray-900 min-h-screen transition-colors duration-500'>
+			<div>
 				<Header />
 				{children}
 				<Footer />
