@@ -21,10 +21,13 @@ export default function QuickResume() {
 						<p className='font-arvo text-xs mb-4 text-green-500'>
 							Once upon a time
 						</p>
-						<h2 className='font-arvo text-lg text-black dark:text-white'>
+						<h2 className='mb-2 font-arvo text-lg text-black dark:text-white'>
 							A self-taught young man with a passion for constant learning every
 							day.
 						</h2>
+						<small className='font-arvo text-xs text-gray-500 dark:text-gray-400'>
+							Full Stack Developer, Flutter Developer & React Developer.
+						</small>
 					</div>
 				</div>
 			</div>

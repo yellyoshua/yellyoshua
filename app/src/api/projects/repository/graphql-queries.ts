@@ -7,7 +7,8 @@ export const GET_ALL_PROJECTS = gql`
 			title
 			slug
 			description
-      projectStatus
+			isDevelopment
+			projectStatus
 			externalLink
 			keywords
 			backdrop {
@@ -46,7 +47,8 @@ export const GET_PROJECT_BY_SLUG = gql`
 			content {
 				html
 			}
-      projectStatus
+			isDevelopment
+			projectStatus
 			externalLink
 			backdrop {
 				...backdropFields

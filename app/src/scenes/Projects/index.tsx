@@ -1,74 +1,26 @@
-import Image from 'next/image';
-import Text from '@/app/components2/Text';
 import {Project} from '@/app/interfaces';
-import ButtonLink from './components/ButtonLink';
-import ProjectStatus from '@/app/components2/ProjectStatus';
+import ProjectCard from './components/ProjectCard';
 
 interface PropTypes {
 	projects: Project[]
 }
 
-
-
 export default function Projects({projects}: PropTypes) {
 	return (
-		<div className='w-full'>
+		<section className='w-full'>
 			<h1 className='text-center mb-16 text-black dark:text-white font-bold font-arvo text-2xl uppercase'>
 				Projects
 			</h1>
-			<div className='grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+			<div className='grid gap-3 mx-3 grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				{projects.map((project, index) => {
 					return (
-						<div
+						<ProjectCard
 							key={`${project.id}-${index}`}
-							className='relative flex justify-center h-80'
-						>
-							{project.backdrop && (
-								<Image
-									className='w-full h-80'
-									layout='fill'
-									src={project.backdrop?.url}
-									alt={project.backdrop?.url}
-								/>
-							)}
-							<div className='absolute w-full bg-black top-0 left-0 right-0 bottom-0 bg-opacity-80 h-full grid place-items-center sm:my-auto'>
-								<div className='text-center py-6 w-full'>
-									<h1 className='uppercase text-base font-bold font-arvo text-white'>
-										{project.title}
-									</h1>
-									<Text className='text-sm text-center break-words px-3 py-3 font-light m-auto text-white'>
-										{project.description}
-									</Text>
-									<div className='w-full my-3'>
-                    <ProjectStatus status={project.projectStatus} />
-									</div>
-
-									<div className='flex flex-col'>
-										{project.externalLink && (
-											<ButtonLink
-												external
-												to={project.externalLink}
-												text='Preview'
-											/>
-										)}
-
-										<ButtonLink
-											external
-											to={project.repository || ''}
-											text='Repository'
-										/>
-
-										<ButtonLink
-											to={`/project/${project.slug}`}
-											text='More info'
-										/>
-									</div>
-								</div>
-							</div>
-						</div>
+							project={project}
+						/>
 					);
 				})}
 			</div>
-		</div>
+		</section>
 	);
 }
