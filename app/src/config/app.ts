@@ -3,7 +3,6 @@ import { LinkedinAlt } from '../assets/icons/LinkedinAlt';
 import { TwitterAlt } from '../assets/icons/TwitterAlt';
 import { TelegramAlt } from '../assets/icons/TelegramAlt';
 import { GithubAlt } from '../assets/icons/GithubAlt';
-import { Instagram } from '../assets/icons/Instagram';
 
 export const APP_NAME: string = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
 
@@ -14,11 +13,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
 		name: 'Twitter',
 		icon: TwitterAlt,
 		url: 'https://short.yoshualopez.com/twitter',
-	},
-	{
-		name: 'Instagram',
-		icon: Instagram,
-		url: 'https://short.yoshualopez.com/instagram',
 	},
 	{
 		name: 'Linkedin',
