@@ -9,7 +9,6 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({project}: ProjectCardProps) {
-console.log('project :', project);
 	return (
 		<div className='relative flex justify-center h-80 rounded-2xl overflow-hidden'>
 			{project.backdrop && (
