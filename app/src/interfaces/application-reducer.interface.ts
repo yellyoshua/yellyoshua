@@ -21,6 +21,7 @@ export interface Project {
 	createdAt: string;
 	updatedAt: string;
 	keywords?: string;
+	previews: Asset[];
 }
 
 export interface ProjectWithSlug {

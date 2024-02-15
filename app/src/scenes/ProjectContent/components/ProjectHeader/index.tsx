@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Project } from "@/app/interfaces";
 import StatusOnlineIcon from '@heroicons/react/solid/StatusOnlineIcon';
 import FireIcon from '@heroicons/react/solid/FireIcon';
@@ -31,39 +32,52 @@ export default function ProjectHeader({project}: PropTypes) {
 	);
 
 	return (
-		<section className='px-2 py-2 m-auto'>
-			<h1 className='text-center text-4xl font-bold font-jost dark:text-white'>
-				{project.title}
-			</h1>
-			<p className='m-auto text-center px-2 py-4 max-w-lg dark:text-white'>
-				{project.description}
-			</p>
-			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2'>
-				<BoxLabel
-					label='Status:'
-					content={<ProjectStatus status={project.projectStatus} />}
-					icon={
-						<StatusOnlineIcon
-							className='mr-2 text-yellow-500 dark:text-white'
-							width={15}
-						/>
-					}
-				/>
-				<BoxLabel
-					label='External link:'
-					content={renderExternalLink(project.externalLink)}
-					icon={
-						<FireIcon className='mr-2 text-red-700 dark:text-white' width={15} />
-					}
-				/>
-				<BoxLabel
-					label='Repository:'
-					content={project.repository ? renderPreviewLink(project.repository) : renderRepoPrivated()}
-					icon={
-						<CodeIcon className='mr-2 text-red-700 dark:text-white' width={15} />
-					}
-				/>
+		<section className='relative px-2 py-10 md:py-20 m-auto'>
+			<div className="relative z-30">
+				<h1 className='text-center text-4xl font-bold font-jost dark:text-white'>
+					{project.title}
+				</h1>
+				<p className='m-auto text-center px-2 py-4 max-w-lg dark:text-white'>
+					{project.description}
+				</p>
+				<div className='flex flex-wrap justify-around items-center gap-6'>
+					<BoxLabel
+						label='Status:'
+						content={<ProjectStatus status={project.projectStatus} />}
+						icon={
+							<StatusOnlineIcon
+								className='mr-2 text-yellow-500 dark:text-white'
+								width={15}
+							/>
+						}
+					/>
+					<BoxLabel
+						label='External link:'
+						content={renderExternalLink(project.externalLink)}
+						icon={
+							<FireIcon className='mr-2 text-red-700 dark:text-white' width={15} />
+						}
+					/>
+					<BoxLabel
+						label='Repository:'
+						content={project.repository ? renderPreviewLink(project.repository) : renderRepoPrivated()}
+						icon={
+							<CodeIcon className='mr-2 text-red-700 dark:text-white' width={15} />
+						}
+					/>
+				</div>
 			</div>
+
+			{project.backdrop?.url && (
+				<div className="absolute top-0 right-0 p-2 w-full h-full opacity-10 flex justify-center">
+					<Image
+						src={project.backdrop?.url}
+						alt={project.title}
+						layout="fill"
+						className='object-cover'
+					/>
+				</div>
+			)}
 		</section>
 	);
 }

@@ -53,6 +53,9 @@ export const GET_PROJECT_BY_SLUG = gql`
 			backdrop {
 				...backdropFields
 			}
+			previews {
+				...backdropFields
+			}
 			repository
 			createdAt
 			updatedAt

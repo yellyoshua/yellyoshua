@@ -10,7 +10,7 @@ interface PropTypes {
 export default function BoxLabel({label, content, icon}: PropTypes) {
 	
 	return (
-		<div className='flex items-start justify-center flex-col text-sm m-0 md:m-auto text-black dark:text-white'>
+		<div className='flex items-center justify-center flex-col text-sm text-black dark:text-white'>
 			<IconText className='text-black dark:text-white' icon={icon}>
 				<strong className='dark:text-white'>{label} </strong>
 			</IconText>

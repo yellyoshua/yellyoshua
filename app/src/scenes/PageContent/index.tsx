@@ -7,9 +7,10 @@ import BoxLabel from '@/app/components2/BoxLabel';
 
 interface PropTypes {
 	page: Page;
+	readTime: string;
 }
 
-export default function PostContent({ page }: PropTypes) {
+export default function PostContent({ page, readTime }: PropTypes) {
 	const updatedAtText = page.updatedAt
 		? dayjs(page.updatedAt, { locale: 'en' }).format('DD MMMM YYYY')
 		: '--';
@@ -22,8 +23,6 @@ export default function PostContent({ page }: PropTypes) {
 		const timeAgo = dayjs(dateForTimeAgo).fromNow(true);
 		return `(${timeAgo})`;
 	};
-
-	const readTime = '';
 
 	return (
 		<div>
@@ -56,11 +55,7 @@ export default function PostContent({ page }: PropTypes) {
 
 					<BoxLabel
 						label='Read time:'
-						content={
-							<span className='m-auto'>
-								{readTime ? `${readTime} min` : '--'}
-							</span>
-						}
+						content={<span className='m-auto'>{readTime}</span>}
 						icon={
 							<CalendarIcon
 								className='mr-2 text-black dark:text-white'
