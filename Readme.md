@@ -3,7 +3,7 @@
 
 </br>
 
-<h3 align="left">I'm Full Stack developer with a lot of curiosity! :technologist:</h3>
+<h3 align="left">I'm Full Stack software developer! :technologist:</h3>
 
 This is my personal website, where I share my projects and experiences. I'm a
 student of [Holberton School](https://www.holbertonschool.com/en/), and I'm
@@ -49,7 +49,7 @@ of the Open Source! :nerd_face:
 
 </br>
 
-<h2 style="font-weight:bold;" align="left">Languages that I've worked!</h2>
+<h2 style="font-weight:bold;" align="left">Programming languages that I've worked!</h2>
 
 </br>
 
@@ -65,7 +65,7 @@ of the Open Source! :nerd_face:
 
 </br>
 
-<h2 align="left" style="font-weight:bold;">GitHub statistics</h2>
+<h2 align="left" style="font-weight:bold;">My GitHub Statistics</h2>
 
 </br>
 
