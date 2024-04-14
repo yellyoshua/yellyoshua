@@ -3,6 +3,7 @@ import { Page } from '@/app/interfaces';
 import Head from 'next/head';
 import Header from '@/app/components2/Header';
 import Footer from '@/app/components2/Footer';
+import { APP_NAME } from '@/app/config/app';
 
 interface PropTypes {
 	children?: React.ReactNode;
@@ -21,7 +22,7 @@ export default function PagesLayout({ children, page }: PropTypes) {
 
 				{/* <meta name="description" content={page.description} /> */}
 				{/* <meta name="keywords" content={page.keywords} /> */}
-				{/* <meta name="author" content={page.author} /> */}
+				<meta name='author' content={APP_NAME} />
 				<meta name='robots' content='index, follow' />
 				<meta name='googlebot' content='index, follow' />
 				<meta name='google' content='nositelinkssearchbox' />

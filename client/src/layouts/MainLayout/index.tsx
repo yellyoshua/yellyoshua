@@ -6,6 +6,9 @@ import Footer from '@/app/components2/Footer';
 
 type LayoutProps = { children?: ReactNode; title?: string };
 
+const description =
+	'I am a Software Developer with knowledge in JavaScript, React Web and Mobile development, Test Driven Development, Agile methodologies, and Colective Property. I am looking for a position that will allow me to use my skills and knowledge to make a difference in the world.';
+
 export default function MainLayout({
 	children,
 	title = APP_NAME,
@@ -18,6 +21,12 @@ export default function MainLayout({
 				<title>{title}</title>
 				<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
 				<link rel='manifest' href='/manifest.json' />
+
+				<meta property='description' content={description} />
+				<meta property='og:image' content='/assets/pictures/yellyoshua.png' />
+				<meta property='og:title' content={title} />
+				<meta property='og:description' content={description} />
+				<meta property='og:url' content='https://yoshualopez.com'></meta>
 			</Head>
 			<div>
 				<Header />
