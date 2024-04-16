@@ -1,5 +1,5 @@
 <!-- Icons: https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md -->
-<h1 align="left" style="font-weight:bold;">¡Hey! What's up :handshake:</h1>
+<h1 align="center" style="font-weight:bold;">Heya!, I'm Yoshua :handshake:</h1>
 
 </br>
 
