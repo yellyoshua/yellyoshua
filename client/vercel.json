@@ -1,0 +1,11 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"cleanUrls": true,
+	"trailingSlash": false,
+	"functions": {
+		"pages/api/ping.ts": {
+			"memory": 128,
+			"maxDuration": 5
+		}
+	}
+}
