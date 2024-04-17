@@ -19,7 +19,7 @@ import { COPYRIGHT, SOCIAL_LINKS } from '../constants';
 			class="w-full justify-center md:flex-auto md:flex-row-reverse pt-3 pb-7 flex-row flex"
 		>
 			{
-				SOCIAL_LINKS.map((social, index) => {
+				SOCIAL_LINKS.map((social) => {
 					return (
 						<Tooltip tooltip={social.name}>
 							<a href={social.url} target="_blank" rel="noopener noreferrer">

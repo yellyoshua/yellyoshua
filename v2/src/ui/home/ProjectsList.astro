@@ -3,12 +3,6 @@ import type { Project } from '../../interfaces';
 import ProjectCard from './ProjectCard.astro';
 import projectsApi from '../../api/projects/projects-api';
 
-const getData = async () => {
-	await new Promise((resolve) => resolve(2000));
-
-	return [];
-};
-
 const projects: Project[] = await projectsApi.getAllProjects();
 ---
 
@@ -22,7 +16,7 @@ const projects: Project[] = await projectsApi.getAllProjects();
 		class="grid gap-3 mx-3 grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
 	>
 		{
-			projects.map((project, index) => {
+			projects.map((project) => {
 				return <ProjectCard project={project} />;
 			})
 		}
