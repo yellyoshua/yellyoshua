@@ -1,0 +1,42 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import MainHeader from '../ui/MainHeader.astro';
+import MainFooter from '../ui/MainFooter.astro';
+import QuickResumePhoto from '../assets/images/QuickResumePhoto.astro';
+import ProjectsList from '../ui/home/ProjectsList.astro';
+---
+
+<MainLayout>
+	<MainHeader />
+	<div class="mb-16 md:mb-0">
+		<div class="grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 select-none">
+			<div class="flex justify-center">
+				<div class="shadow-2xl border-green-500 border-2 p-1 rounded-md">
+					<QuickResumePhoto
+						class="border-purple-700 border-2 w-60 bg-white dark:bg-gray-900 transition-colors duration-500 filter pb-6 rounded-md fill-current text-black dark:text-white"
+					/>
+				</div>
+			</div>
+			<div class="flex m-auto pt-5 md:pt-0 md:m-0 place-items-center">
+				<div class="text-left md:w-7/12 w-60">
+					<h1 class="font-arvo text-xl font-bold text-black dark:text-white">
+						I&lsquo;m{' '}
+						<a href="/yellyoshua" class="text-green-500 hover:underline">
+							@yellyoshua{' '}
+						</a>
+					</h1>
+					<p class="font-arvo text-xs mb-4 text-green-500">Once upon a time</p>
+					<h2 class="mb-2 font-arvo text-lg text-black dark:text-white">
+						A self-taught young man with a passion for constant learning every
+						day.
+					</h2>
+					<small class="font-arvo text-xs text-gray-500 dark:text-gray-400">
+						Full Stack Developer, Flutter Developer & React Developer.
+					</small>
+				</div>
+			</div>
+		</div>
+	</div>
+	<ProjectsList />
+	<MainFooter />
+</MainLayout>

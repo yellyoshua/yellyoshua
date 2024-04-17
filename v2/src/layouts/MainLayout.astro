@@ -1,0 +1,32 @@
+---
+import { SHORT_BIO_DESCRIPTION } from '../constants';
+import ThemeScript from './ThemeScript.astro';
+const title = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UFT-8" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="description" content={SHORT_BIO_DESCRIPTION} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<meta property="description" content={SHORT_BIO_DESCRIPTION} />
+		<meta property="og:image" content="/assets/pictures/yellyoshua.png" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={SHORT_BIO_DESCRIPTION} />
+		<meta property="og:url" content="https://yoshualopez.com" />
+	</head>
+
+	<body
+		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-500"
+	>
+		<slot />
+		<ThemeScript />
+	</body>
+</html>
+<style is:global></style>

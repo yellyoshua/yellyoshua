@@ -1,0 +1,24 @@
+---
+const STYLE_LINE_SIZE = {
+	'25': 'w-3/12',
+	'50': 'w-6/12',
+	'75': 'w-9/12',
+};
+
+interface Props {
+	size?: keyof typeof STYLE_LINE_SIZE;
+	className?: string;
+	borderColor?: string;
+}
+
+const defaultSize = '25';
+
+const { size = defaultSize, className, borderColor } = Astro.props;
+
+const lineSize = STYLE_LINE_SIZE[size];
+---
+
+<div
+	class={`${className} ${lineSize} mx-auto border-b-2 ${borderColor ? borderColor : 'border-gray-500'} mt-2 mb-6`}
+>
+</div>

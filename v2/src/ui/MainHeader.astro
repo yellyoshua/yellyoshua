@@ -1,0 +1,43 @@
+---
+import PageLogo from '../components/PageLogo.astro';
+import Separator from '../components/Separator.astro';
+
+const navLinks = [
+	{ text: 'Home', to: '/' },
+	{ text: 'About me', to: '/about-me' },
+	{ text: 'Knowledges', to: '/knowledges' },
+	{ text: 'Contact me', to: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="w-full">
+	<div class="w-full justify-center py-3 flex mx-auto">
+		<PageLogo />
+	</div>
+	<nav class="w-full flex flex-row justify-center mb-3">
+		{
+			navLinks.map((navLink) => (
+				<div class="px-2">
+					<a
+						href={navLink.to}
+						class:list={[
+							'uppercase border-b-2 font-arvo antialiased text-xs md:text-sm',
+							'border-transparent hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all',
+							{
+								'font-bold border-black dark:border-white text-black dark:text-white':
+									navLink.to === currentPath,
+								'font-light text-gray-500 dark:text-gray-400':
+									navLink.to !== currentPath,
+							},
+						]}
+					>
+						{navLink.text}
+					</a>
+				</div>
+			))
+		}
+	</nav>
+	<Separator size="25" />
+</header>
