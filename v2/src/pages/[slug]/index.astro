@@ -1,0 +1,34 @@
+---
+import pagesApi from '../../api/pages/pages-api';
+
+export async function getStaticPaths() {
+	const pages = await pagesApi.getPagesSlug();
+
+	return pages.map((page) => ({params: {slug: page.slug}}));
+}
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UFT-8" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="generator" content={Astro.generator} />
+		<title>
+			Hola from page
+		</title>
+
+		<meta property="og:image" content="/assets/pictures/yellyoshua.png" />
+		<meta property="og:url" content="https://yoshualopez.com" />
+	</head>
+
+	<body
+		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-500"
+	>
+		<h3 class="text-xl text-red">This is an script</h3>
+	</body>
+</html>
+<style is:global></style>

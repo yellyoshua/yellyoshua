@@ -1,0 +1,63 @@
+---
+import { SHORT_BIO_DESCRIPTION } from '../constants';
+import type { Page } from '../interfaces';
+import ThemeScript from './ThemeScript.astro';
+
+const title = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
+
+
+interface Props {
+	page: Page;
+}
+
+const {page} = Astro.props;
+
+const pageUrl = 'https://yoshualopez.com/' + page;
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UFT-8" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="description" content={SHORT_BIO_DESCRIPTION} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{page.title}</title>
+
+		<meta property="description" content={SHORT_BIO_DESCRIPTION} />
+		<meta property="og:image" content="/assets/pictures/yellyoshua.png" />
+		<meta property="og:title" content={page.title} />
+		<meta property="og:description" content={SHORT_BIO_DESCRIPTION} />
+		<meta property="og:url" content={pageUrl} />
+
+
+		<meta name="description" content={SHORT_BIO_DESCRIPTION} />
+		<!-- <meta name="keywords" content={page.keywords} /> -->
+		
+		<meta name='author' content={title} />
+		<meta name='robots' content='index, follow' />
+		<meta name='googlebot' content='index, follow' />
+		<meta name='google' content='nositelinkssearchbox' />
+		<meta name='google' content='notranslate' />
+		<meta name='twitter:card' content='summary' />
+		<meta name='twitter:image:alt' content={page.title} />
+		<meta property="og:url" content={pageUrl} />
+		<meta property='og:type' content='website' />
+		<meta property='og:title' content={page.title} />
+		<meta property="og:description" content={SHORT_BIO_DESCRIPTION} />
+		<meta property="og:image" content="/assets/pictures/yellyoshua.png" />
+		<meta property='og:site_name' content={page.title} />
+		<meta property='og:locale' content='en_US' />
+	</head>
+
+	<body
+		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-500"
+	>
+		<slot />
+		<ThemeScript />
+	</body>
+</html>
+<style is:global></style>
