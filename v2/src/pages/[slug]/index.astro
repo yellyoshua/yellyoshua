@@ -1,34 +1,33 @@
 ---
 import pagesApi from '../../api/pages/pages-api';
+import getReadTime from '../../utils/getReadTime';
+import PagesLayout from '../../layouts/PagesLayout.astro';
+import PageHeader from '../../ui/page/PageHeader.astro';
+import RenderMarkdown from '../../components/RenderMarkdown.astro';
+import SuggestedPages from '../../ui/page/SuggestedPages.astro';
 
 export async function getStaticPaths() {
 	const pages = await pagesApi.getPagesSlug();
 
-	return pages.map((page) => ({params: {slug: page.slug}}));
+	return pages.map((page) => ({ params: { slug: page.slug } }));
 }
 
+const { slug } = Astro.params;
+
+const [page, recommendations] = await Promise.all([
+	pagesApi.getPageBySlug(slug),
+	pagesApi.getPagesRecommendation(slug),
+]);
+
+const content = page.content?.html || '';
+const readTime = getReadTime(content);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UFT-8" />
-		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-		<link rel="manifest" href="/manifest.json" />
-		<meta name="generator" content={Astro.generator} />
-		<title>
-			Hola from page
-		</title>
-
-		<meta property="og:image" content="/assets/pictures/yellyoshua.png" />
-		<meta property="og:url" content="https://yoshualopez.com" />
-	</head>
-
-	<body
-		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-500"
-	>
-		<h3 class="text-xl text-red">This is an script</h3>
-	</body>
-</html>
-<style is:global></style>
+<PagesLayout page={page}>
+	<PageHeader page={page} readTime={readTime} />
+	<RenderMarkdown
+		className="mx-auto px-5 sm:px-12 py-5"
+		content={content}
+	/>
+	<SuggestedPages pages={recommendations} />
+</PagesLayout>

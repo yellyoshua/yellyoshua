@@ -16,10 +16,12 @@
 		"@astrojs/tailwind": "^5.1.0",
 		"@astrojs/vercel": "^7.5.3",
 		"astro": "^4.6.1",
+		"dayjs": "^1.11.10",
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
+		"@tailwindcss/typography": "0.5.12",
 		"@types/jest": "29.5.12",
 		"jest": "29.7.0",
 		"ts-node": "10.9.2"

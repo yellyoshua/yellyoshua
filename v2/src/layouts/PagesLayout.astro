@@ -2,6 +2,8 @@
 import { SHORT_BIO_DESCRIPTION } from '../constants';
 import type { Page } from '../interfaces';
 import ThemeScript from './ThemeScript.astro';
+import MainHeader from '../ui/MainHeader.astro';
+import MainFooter from '../ui/MainFooter.astro';
 
 const title = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
 
@@ -19,7 +21,7 @@ const pageUrl = 'https://yoshualopez.com/' + page;
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UFT-8" />
+		<meta charset="utf8" />
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="manifest" href="/manifest.json" />
@@ -54,9 +56,12 @@ const pageUrl = 'https://yoshualopez.com/' + page;
 	</head>
 
 	<body
-		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-500"
+		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-200"
 	>
-		<slot />
+		
+		<MainHeader />
+			<slot />
+		<MainFooter />
 		<ThemeScript />
 	</body>
 </html>

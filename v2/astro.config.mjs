@@ -16,4 +16,10 @@ export default defineConfig({
 	},
 	integrations: [tailwind()],
 	adapter: vercel(),
+	redirects: {
+		"/admin": {
+			status: 301,
+			destination: "https://app.hygraph.com/",
+		}
+	}
 });

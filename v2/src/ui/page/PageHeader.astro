@@ -1,0 +1,60 @@
+---
+import type { Page } from '../../interfaces';
+import BoxLabel from '../../components/page/BoxLabel.astro';
+import CalendarIcon from '../../assets/CalendarIcon.astro';
+import ClockIcon from '../../assets/ClockIcon.astro';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(localizedFormat);
+dayjs.extend(relativeTime);
+dayjs.extend(timezone);
+
+interface Props {
+	page: Page;
+	readTime: string;
+}
+
+const { page, readTime } = Astro.props;
+
+const updatedAtText = page.updatedAt
+	? dayjs(page.updatedAt, { locale: 'en' }).format('DD MMMM YYYY')
+	: '--';
+
+const createdAtText = page.createdAt
+	? dayjs(page.createdAt, { locale: 'en' }).format('DD MMMM YYYY')
+	: '--';
+
+const getTimeAgo = (dateForTimeAgo: string) => {
+	const timeAgo = dayjs(dateForTimeAgo).fromNow(true);
+	return `(${timeAgo})`;
+};
+---
+
+<section class="mx-3 mb-10 mt-5 p-2">
+	<h1
+		class="text-center text-4xl font-bold font-jost text-black dark:text-white"
+	>
+		{page.title}
+	</h1>
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+		<BoxLabel label="Posted:">
+			<CalendarIcon slot="icon" class="mr-2 text-black dark:text-white" />
+			<span slot="content">{createdAtText}</span>
+		</BoxLabel>
+
+		<BoxLabel label="Last updated:">
+			<ClockIcon slot="icon" class="mr-2 text-black dark:text-white" />
+			<span slot="content">{updatedAtText} {page.updatedAt && getTimeAgo(page.updatedAt)}</span>
+		</BoxLabel>
+
+		<BoxLabel label="Read time:">
+			<CalendarIcon slot="icon" class="mr-2 text-black dark:text-white" />
+			<span slot="content" class="m-auto">{readTime}</span>
+		</BoxLabel>
+	</div>
+</section>

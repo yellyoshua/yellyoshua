@@ -1,0 +1,42 @@
+---
+import type { Page } from '../../interfaces';
+import dayjs from 'dayjs';
+
+interface Props {
+	pages: Page[];
+}
+
+const { pages } = Astro.props;
+---
+
+<div class="mx-auto px-5 py-5" style={{ maxWidth: 800 }}>
+	<h4 class="text-base font-arvo text-black dark:text-white">
+		You may also like:
+	</h4>
+	<div
+		class="py-3 grid gap-2 grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+	>
+		{
+			pages.map((page) => {
+				const updatedAtText = page.updatedAt
+					? dayjs(page.updatedAt, { locale: 'en' }).format('DD MMMM YYYY')
+					: '--';
+
+				return (
+					<a
+						href={`/${page.slug}`}
+						class="flex gap-2 flex-col p-2 dark:bg-gray-800 bg-gray-100 rounded-md shadow-md hover:scale-[0.98] transition-transform"
+					>
+						<p class="text-sm text-black dark:text-white font-arvo">
+							{page.title}
+						</p>
+
+						<p class="text-xs text-gray-500 dark:text-gray-400">
+							{updatedAtText}
+						</p>
+					</a>
+				);
+			})
+		}
+	</div>
+</div>
