@@ -15,7 +15,7 @@ const { slug } = Astro.params;
 const project = await projectsApi.getProjectBySlug(slug);
 
 // Set Cache-Control headers for CDN caching
-Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
+// Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
 ---
 
 <ProjectsLayout project={project}>
