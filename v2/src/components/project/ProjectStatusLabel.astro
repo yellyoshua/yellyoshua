@@ -1,0 +1,29 @@
+---
+import type { Project } from '../../interfaces';
+import Text from '../Text.astro';
+
+interface Props {
+	status: Project['projectStatus'];
+	className?: string;
+}
+
+const { status, className } = Astro.props;
+
+const statusColors = {
+	development: 'bg-red-500 text-white',
+	production: 'bg-green-700 text-white',
+	forgotten: 'bg-gray-500 text-white',
+	archived: 'bg-gray-500 text-white',
+};
+
+const statusLabels = {
+	development: 'In development',
+	production: 'Finished',
+	forgotten: 'Forgotten',
+	archived: 'Archived',
+};
+---
+
+<Text class={`${className} ${statusColors[status]} px-1`}>
+	{statusLabels[status]}
+</Text>

@@ -1,0 +1,95 @@
+---
+import type { Project } from '../../interfaces';
+import BoxLabel from '../../components/page/BoxLabel.astro';
+import CodeWrapIcon from '../../assets/CodeWrapIcon.astro';
+import GlobeIcon from '../../assets/GlobeIcon.astro';
+import ClockDashedIcon from '../../assets/ClockDashedIcon.astro';
+import ExternalLinkIcon from '../../assets/ExternalLinkIcon.astro';
+import ProjectStatusLabel from '../../components/project/ProjectStatusLabel.astro';
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<section class="relative px-2 py-10 md:py-20 m-auto">
+	<div class="relative z-30">
+		<h1 class="text-center text-4xl font-bold font-jost dark:text-white">
+			{project.title}
+		</h1>
+		<p class="m-auto text-center px-2 py-4 max-w-lg dark:text-white">
+			{project.description}
+		</p>
+		<div class="flex flex-wrap justify-around items-center gap-6">
+			<BoxLabel label="Status:">
+				<ClockDashedIcon
+					slot="icon"
+					class="mr-2 text-yellow-500 dark:text-white"
+				/>
+				<span slot="content">
+					<ProjectStatusLabel status={project.projectStatus} />
+				</span>
+			</BoxLabel>
+
+			<BoxLabel label="External link:">
+				<GlobeIcon slot="icon" class="mr-2 text-red-700 dark:text-white" />
+				<span slot="content">
+					{
+						project.externalLink ? (
+							<a
+								rel="noopener noreferrer"
+								target="_blank"
+								href={project.externalLink}
+								class="m-auto"
+							>
+								<p class="flex items-center justify-center text-sky-700 bg-white px-2 py-1">
+									<ExternalLinkIcon className="mr-1" width={15} />
+									<strong>Preview</strong>
+								</p>
+							</a>
+						) : (
+							<p class="m-auto">No avaliable</p>
+						)
+					}
+				</span>
+			</BoxLabel>
+
+			<BoxLabel label="Repository:">
+				<CodeWrapIcon slot="icon" class="mr-2 text-black dark:text-white" />
+				<span slot="content">
+					{
+						project.repository ? (
+							<a
+								rel="noopener noreferrer"
+								target="_blank"
+								href={project.repository}
+								class="m-auto"
+							>
+								<p class="flex items-center justify-center text-sky-700 bg-white px-2 py-1">
+									<ExternalLinkIcon className="mr-1" width={15} />
+									<strong>Preview</strong>
+								</p>
+							</a>
+						) : (
+							<p class="bg-red-500 text-white px-1">Privated</p>
+						)
+					}
+				</span>
+			</BoxLabel>
+		</div>
+	</div>
+
+	{
+		project.backdrop?.url && (
+			<div class="absolute top-0 right-0 w-full h-full opacity-10 flex justify-center">
+				<img
+					class="w-full h-full object-cover"
+					src={project.backdrop.url}
+					alt={project.backdrop.fileName}
+				/>
+			</div>
+		)
+	}
+</section>
