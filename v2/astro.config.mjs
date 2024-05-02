@@ -9,7 +9,10 @@ export default defineConfig({
 		inlineStylesheets: 'always',
 	},
 	compressHTML: true,
-	prefetch: true,
+	prefetch: {
+		defaultStrategy: 'viewport',
+		prefetchAll: true
+	},
 	output: 'hybrid',
 	devToolbar: {
 		enabled: false,
