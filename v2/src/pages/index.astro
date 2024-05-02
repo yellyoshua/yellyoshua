@@ -4,7 +4,9 @@ import MainHeader from '../ui/MainHeader.astro';
 import MainFooter from '../ui/MainFooter.astro';
 import QuickResumePhoto from '../assets/images/QuickResumePhoto.astro';
 import ProjectsList from '../ui/home/ProjectsList.astro';
-import { ViewTransitions } from 'astro:transitions';
+
+// Set Cache-Control headers for CDN caching
+Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
 ---
 
 <MainLayout>
