@@ -6,6 +6,8 @@ import PageHeader from '../../ui/page/PageHeader.astro';
 import RenderMarkdown from '../../components/RenderMarkdown.astro';
 import SuggestedPages from '../../ui/page/SuggestedPages.astro';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
 	const pages = await pagesApi.getPagesSlug();
 

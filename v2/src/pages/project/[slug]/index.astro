@@ -4,6 +4,8 @@ import ProjectsLayout from '../../../layouts/ProjectsLayout.astro';
 import RenderMarkdown from '../../../components/RenderMarkdown.astro';
 import ProjectHeader from '../../../ui/project/ProjectHeader.astro';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
 	const projects = await projectsApi.getProjectsSlug();
 

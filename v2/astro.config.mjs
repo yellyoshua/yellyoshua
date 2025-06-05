@@ -15,9 +15,21 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 	},
-	output: 'static',
+	output: 'server',
 	devToolbar: {
 		enabled: false,
 	},
 	adapter: vercel(),
+	// i18n: {
+	// 	defaultLocale: 'en',
+	// 	locales: ['en', 'es'],
+	// 	routing: {
+	// 		redirectToDefaultLocale: true,
+	// 		prefixDefaultLocale: false
+	// 	},
+	// 	fallback: {
+	// 		es: 'en',
+	// 		en: 'en'
+	// 	}
+	// }
 });

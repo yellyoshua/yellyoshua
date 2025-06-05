@@ -1,0 +1,21 @@
+---
+import spotifyApi from "../../../api/spotify/spotify-api";
+import redisApi from "../../../api/redis/redis-api";
+
+const params = new URLSearchParams(Astro.request.url.split('?')[1]);
+const code = params.get('code');
+
+// If the code is present, exchange it for an access token and store it in Redis
+// Uncomment the following code to enable the OAuth flow
+//
+// try {
+// 	if (code) {
+// 		const response = await spotifyApi.claimAccessToken({code: code});
+// 		await redisApi.json.set('access_token', '$', response)
+// 	}
+// } catch (error) {
+// 	console.error('Error during Spotify OAuth:', error);
+// }
+---
+
+ok
