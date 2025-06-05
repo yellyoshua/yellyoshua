@@ -2,8 +2,8 @@
 import spotifyApi from "../../api/spotify/spotify-api";
 import redisApi from "../../api/redis/redis-api";
 
-const data = await redisApi.json.get('access_token');
-const updatedToken = await spotifyApi.refreshToken(data.refresh_token);
+const data = await redisApi.json.get('access_token') as any;
+const updatedToken = await spotifyApi.refreshToken(data?.refresh_token);
 await redisApi.json.set('access_token', '$', updatedToken);
 const currentTrack = await spotifyApi.getCurrentTrack(updatedToken.access_token);
 
