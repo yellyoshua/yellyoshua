@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
-
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,10 +12,12 @@ export default defineConfig({
 		defaultStrategy: 'viewport',
 		prefetchAll: true
 	},
+	vite: {
+		plugins: [tailwindcss()],
+	},
 	output: 'static',
 	devToolbar: {
 		enabled: false,
 	},
-	integrations: [tailwind()],
 	adapter: vercel(),
 });

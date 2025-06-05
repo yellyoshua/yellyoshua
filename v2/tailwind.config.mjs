@@ -72,10 +72,5 @@ export default {
         },
       })
 		},
-	},
-	plugins: [typography],
-	corePlugins: {
-		invert: true,
-		float: false
 	}
 };
