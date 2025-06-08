@@ -14,6 +14,12 @@ export default {
 				}
 			});
 
+			if (response.status === 204) {
+				return null;
+			}
+
+			if (!response.ok) throw response.statusText;
+
 			const data = await response.json();
 			if (data.error) throw data;
 
