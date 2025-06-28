@@ -37,6 +37,7 @@ export const GET_PAGES_RECOMMENDATION = `
 			id
 			slug
 			title
+			previewContent
 			backdrop {
 				...backdropFields
 			}

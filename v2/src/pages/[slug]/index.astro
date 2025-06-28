@@ -16,10 +16,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const [page, recommendations] = await Promise.all([
-	pagesApi.getPageBySlug(slug),
-	pagesApi.getPagesRecommendation(slug),
-]);
+const page = await pagesApi.getPageBySlug(slug);
 
 const content = page.content?.html || '';
 const readTime = getReadTime(content);
@@ -34,5 +31,5 @@ const readTime = getReadTime(content);
 		className="mx-auto px-5 sm:px-12 py-5"
 		content={content}
 	/>
-	<SuggestedPages pages={recommendations} />
+	<SuggestedPages slug={slug} />
 </PagesLayout>

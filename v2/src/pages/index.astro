@@ -1,10 +1,9 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import MainHeader from '../ui/MainHeader.astro';
-import MainFooter from '../ui/MainFooter.astro';
 import QuickResumePhoto from '../assets/images/QuickResumePhoto.astro';
 import ProjectsList from '../ui/home/ProjectsList.astro';
 import SpotifyCurrentTrack from '../ui/home/SpotifyCurrentTrack.astro';
+import SuggestedPages from '../ui/page/SuggestedPages.astro';
 
 export const prerender = true;
 
@@ -13,7 +12,6 @@ export const prerender = true;
 ---
 
 <MainLayout>
-	<MainHeader />
 	<div class="mb-16 md:mb-0">
 		<div class="grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 select-none">
 			<div class="flex justify-center">
@@ -45,5 +43,12 @@ export const prerender = true;
 		</div>
 	</div>
 	<ProjectsList />
-	<MainFooter />
+	<h3 class="text-center text-2xl font-arvo text-black dark:text-white mt-10 mb-5 italic">
+		Feel free to explore and discover more about my journey <br/> through technology and life.
+	</h3>
+
+	<p class="text-center text-gray-500 dark:text-gray-400 mb-10">
+		Some of my recent writings and thoughts are shared below.
+	</p>
+	<SuggestedPages disableHintText={true} limit={6} />
 </MainLayout>

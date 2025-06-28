@@ -6,7 +6,7 @@
 
 <script is:inline>
 	// figure out user's preferred theme and set it as html class for tailwind before paint
-	(function () {
+	function applyTheme () {
 		if (typeof window !== 'undefined') {
 			const isSystemColorSchemeDark = window.matchMedia(
 				'(prefers-color-scheme: dark)'
@@ -19,5 +19,8 @@
 				document.documentElement.classList.add('dark');
 			}
 		}
-	})();
+	}
+
+	document.addEventListener("astro:after-swap", applyTheme);
+	applyTheme();
 </script>

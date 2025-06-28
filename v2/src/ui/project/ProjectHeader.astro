@@ -83,7 +83,7 @@ const { project } = Astro.props;
 
 	{
 		project.backdrop?.url && (
-			<div class="absolute top-0 right-0 w-full h-full opacity-10 flex justify-center">
+			<div class="absolute top-0 right-0 w-full h-full opacity-10 flex justify-center" transition:name={`project-backdrop-${project.slug}`}>
 				<img
 					class="w-full h-full object-cover"
 					src={project.backdrop.url}

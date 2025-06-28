@@ -1,9 +1,20 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 import { SHORT_BIO_DESCRIPTION } from '../constants';
 import ThemeScript from './ThemeScript.astro';
+import type { Project } from '../interfaces';
+import MainHeader from '../ui/MainHeader.astro';
+import MainFooter from '../ui/MainFooter.astro';
+
+interface Props {
+	project?: Project;
+}
+
+const {project} = Astro.props;
 
 const title = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
+const pageUrl = project ? 'https://yoshualopez.com/' + project.slug : 'https://yoshualopez.com';
 ---
 
 <!doctype html>
@@ -13,21 +24,57 @@ const title = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="manifest" href="/manifest.json" />
-		<meta name="description" content={SHORT_BIO_DESCRIPTION} />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 
-		<meta property="description" content={SHORT_BIO_DESCRIPTION} />
-		<meta property="og:image" content="/assets/pictures/yellyoshua.jpg" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={SHORT_BIO_DESCRIPTION} />
-		<meta property="og:url" content="https://yoshualopez.com" />
+		<!-- homepage -->
+		{
+			!project && (
+				<meta name="description" content={SHORT_BIO_DESCRIPTION} />
+				<meta name="generator" content={Astro.generator} />
+				<title>{title}</title>
+
+				<meta property="description" content={SHORT_BIO_DESCRIPTION} />
+				<meta property="og:image" content="/assets/pictures/yellyoshua.jpg" />
+				<meta property="og:title" content={title} />
+				<meta property="og:description" content={SHORT_BIO_DESCRIPTION} />
+				<meta property="og:url" content="https://yoshualopez.com" />
+			)
+		}
+
+		<!-- project -->
+		{
+			project && (
+				<>
+					<title>{project.title}</title>
+
+					<meta name='description' content={project.description} />
+					<meta name='keywords' content={project.keywords} />
+					<meta name="author" content={title} />
+					<meta name='robots' content='index, follow' />
+					<meta name='googlebot' content='index, follow' />
+					<meta name='google' content='nositelinkssearchbox' />
+					<meta name='google' content='notranslate' />
+					<meta name='twitter:card' content='summary' />
+					<meta name='twitter:image:alt' content={project.title} />
+					<meta property="og:url" content={pageUrl} />
+					<meta property='og:type' content='website' />
+					<meta property='og:title' content={project.title} />
+					<meta property='og:description' content={project.description} />
+					<meta property="og:image" content="/assets/pictures/yellyoshua.jpg" />
+					<meta property='og:site_name' content={project.title} />
+					<meta property='og:locale' content='en_US' />
+				</>
+			)
+		}
+
+		<ClientRouter />
 	</head>
 
 	<body
 		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-200"
 	>
+		<MainHeader />
 		<slot />
+		<MainFooter />
 		<ThemeScript />
 	</body>
 </html>

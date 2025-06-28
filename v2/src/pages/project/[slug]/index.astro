@@ -1,8 +1,8 @@
 ---
 import projectsApi from '../../../api/projects/projects-api';
-import ProjectsLayout from '../../../layouts/ProjectsLayout.astro';
 import RenderMarkdown from '../../../components/RenderMarkdown.astro';
 import ProjectHeader from '../../../ui/project/ProjectHeader.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
 
 export const prerender = true;
 
@@ -20,10 +20,10 @@ const project = await projectsApi.getProjectBySlug(slug);
 // Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
 ---
 
-<ProjectsLayout project={project}>
+<MainLayout project={project}>
 	<ProjectHeader project={project} />
 	<RenderMarkdown
 		className="mx-auto px-5 sm:px-12 py-5"
 		content={project.content?.html}
 	/>
-</ProjectsLayout>
+</MainLayout>

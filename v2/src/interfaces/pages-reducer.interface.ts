@@ -8,6 +8,7 @@ export interface Page {
 	id: string;
 	slug: string;
 	title: string;
+	previewContent: string;
 	createdAt: string;
 	updatedAt: string;
 	backdrop: Asset | null;

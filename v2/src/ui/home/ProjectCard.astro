@@ -13,6 +13,7 @@ const { project } = Astro.props;
 
 <div
 	class="relative flex justify-center h-80 rounded-2xl overflow-hidden dark:border-[0.5px] dark:border-[#737373]"
+	transition:name={`project-backdrop-${project.slug}`}
 >
 	{
 		project.backdrop && (
