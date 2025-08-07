@@ -1,45 +1,38 @@
 ---
 import PageLogo from '../components/PageLogo.astro';
-import Separator from '../components/Separator.astro';
 
-const navLinks = [
-	{ text: 'Home', to: '/' },
-	{ text: 'About me', to: '/about-me' },
-	{ text: 'Knowledges', to: '/knowledges' },
-	{ text: 'Contact me', to: '/contact' },
+const links = [
+	{text: 'Services', to: '/#services-section'},
+	{text: 'Projects', to: '/#projects-section'},
+	// {text: 'Blog', to: '/blog'},
+	{text: 'About me', to: '/about-me'},
+	{text: 'Contact', to: '/contact'},
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="w-full">
-	<div class="w-full justify-center py-3 flex mx-auto">
-		<a href="/" class="flex items-center" data-astro-prefetch="load">
+<header class="py-6">
+	<nav class="flex justify-between items-center max-w-7xl mx-auto">
+		<a href="/" class="text-2xl font-bold text-white tracking-tighter">
 			<PageLogo />
 		</a>
-	</div>
-	<nav class="w-full flex flex-row justify-center mb-3">
-		{
-			navLinks.map((navLink) => (
-				<div class="px-2">
-					<a
-						href={navLink.to}
-						class:list={[
-							'uppercase border-b-2 font-arvo antialiased text-xs md:text-sm',
-							'border-transparent hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-all',
-							{
-								'font-bold border-black dark:border-white text-black dark:text-white':
-									navLink.to === currentPath,
-								'font-light text-gray-500 dark:text-gray-400':
-									navLink.to !== currentPath,
-							},
-						]}
-					>
-						{navLink.text}
+
+		<div class="hidden md:flex items-center space-x-8">
+			{
+				links.map((link) => (
+					<a href={link.to} class:list={[
+						'hover:text-emerald-400 transition-colors',
+						{'font-bold text-white': link.to === currentPath},
+						{'font-light text-gray-500 dark:text-gray-400': link.to !== currentPath},
+					]}>
+						{link.text}
 					</a>
-				</div>
-			))
-		}
+				))
+			}
+		</div>
+		<a href="/contact" class="hidden md:inline-block bg-emerald-500 text-white hover:bg-emerald-600 dark:text-slate-950 font-semibold px-5 py-2 rounded-lg dark:hover:bg-emerald-400 transition-colors">
+			Get in Touch
+		</a>
 	</nav>
-	<Separator size="25" />
 </header>
