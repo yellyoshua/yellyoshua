@@ -1,0 +1,43 @@
+---
+import { SHORT_BIO_DESCRIPTION } from '../../constants';
+import type { Page } from '../../interfaces';
+
+interface Props {
+	page: Page;
+}
+
+const {page} = Astro.props;
+
+const title = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
+const pageUrl = `https://yoshualopez.com/${page.slug}`;
+---
+
+<meta charset="utf8" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="description" content={SHORT_BIO_DESCRIPTION} />
+<title>{page.title}</title>
+
+<meta property="description" content={SHORT_BIO_DESCRIPTION} />
+<meta property="og:image" content="/assets/pictures/yellyoshua.jpg" />
+<meta property="og:title" content={page.title} />
+<meta property="og:description" content={SHORT_BIO_DESCRIPTION} />
+<meta property="og:url" content={pageUrl} />
+
+<meta name="description" content={SHORT_BIO_DESCRIPTION} />
+
+<meta name='author' content={title} />
+<meta name='robots' content='index, follow' />
+<meta name='googlebot' content='index, follow' />
+<meta name='google' content='nositelinkssearchbox' />
+<meta name='google' content='notranslate' />
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:image:alt' content={page.title} />
+<meta property="og:url" content={pageUrl} />
+<meta property='og:type' content='website' />
+<meta property='og:title' content={page.title} />
+<meta property="og:description" content={SHORT_BIO_DESCRIPTION} />
+<meta property="og:image" content="/assets/pictures/yellyoshua.jpg" />
+<meta property='og:site_name' content={page.title} />
+<meta property='og:locale' content='en_US' />

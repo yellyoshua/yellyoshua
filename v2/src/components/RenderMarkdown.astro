@@ -10,7 +10,7 @@ const { className, content } = Astro.props;
 <div class="bg-white dark:bg-gray-900 transition-colors duration-500 w-full">
 	<article
 		id="markdown-content"
-		class={`prose prose-xl md:prose-lg ${className}`}
+		class={`prose prose-xl md:prose-lg ${className} dark:prose-invert`}
 		set:html={content}
 	/>
 </div>

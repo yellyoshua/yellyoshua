@@ -30,16 +30,4 @@ export default defineConfig({
 			UPSTASH_REDIS_TOKEN: envField.string({context: 'server', access: 'secret'})
 		}
 	}
-	// i18n: {
-	// 	defaultLocale: 'en',
-	// 	locales: ['en', 'es'],
-	// 	routing: {
-	// 		redirectToDefaultLocale: true,
-	// 		prefixDefaultLocale: false
-	// 	},
-	// 	fallback: {
-	// 		es: 'en',
-	// 		en: 'en'
-	// 	}
-	// }
 });

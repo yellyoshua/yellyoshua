@@ -1,0 +1,37 @@
+---
+import type { Project } from '../../interfaces';
+
+interface Props {
+	project: Project;
+}
+
+const {project} = Astro.props;
+
+const title = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
+const pageUrl = `https://yoshualopez.com/project/${project.slug}`;
+
+---
+
+<meta charset="utf8" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="manifest" href="/manifest.json" />
+
+<title>{project.title}</title>
+
+<meta name='description' content={project.description} />
+<meta name='keywords' content={project.keywords} />
+<meta name="author" content={title} />
+<meta name='robots' content='index, follow' />
+<meta name='googlebot' content='index, follow' />
+<meta name='google' content='nositelinkssearchbox' />
+<meta name='google' content='notranslate' />
+<meta name='twitter:card' content='summary' />
+<meta name='twitter:image:alt' content={project.title} />
+<meta property="og:url" content={pageUrl} />
+<meta property='og:type' content='website' />
+<meta property='og:title' content={project.title} />
+<meta property='og:description' content={project.description} />
+<meta property="og:image" content="/assets/pictures/yellyoshua.jpg" />
+<meta property='og:site_name' content={project.title} />
+<meta property='og:locale' content='en_US' />

@@ -1,10 +1,10 @@
 ---
 import pagesApi from '../../api/pages/pages-api';
 import getReadTime from '../../utils/getReadTime';
-import PagesLayout from '../../layouts/PagesLayout.astro';
 import PageHeader from '../../ui/page/PageHeader.astro';
 import RenderMarkdown from '../../components/RenderMarkdown.astro';
 import SuggestedPages from '../../ui/page/SuggestedPages.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
 
 export const prerender = true;
 
@@ -25,11 +25,11 @@ const readTime = getReadTime(content);
 // Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
 ---
 
-<PagesLayout page={page}>
+<MainLayout page={page}>
 	<PageHeader page={page} readTime={readTime} />
 	<RenderMarkdown
 		className="mx-auto px-5 sm:px-12 py-5"
 		content={content}
 	/>
 	<SuggestedPages slug={slug} />
-</PagesLayout>
+</M>
