@@ -1,6 +1,7 @@
 import 'dayjs/locale/es';
 import dayjs from 'dayjs';
 import type { AppProps } from 'next/app';
+import { Analytics } from '@vercel/analytics/next';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import utc from 'dayjs/plugin/utc';
@@ -16,7 +17,10 @@ dayjs.extend(timezone);
 dayjs.locale('en');
 
 function MyApp({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />;
+	return <>
+		<Component {...pageProps} />
+		<Analytics />
+	</>;
 }
 
 export default MyApp;
