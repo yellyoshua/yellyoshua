@@ -1,0 +1,117 @@
+cv:
+  name: Yoshua Lopez
+  location: Quito, Ecuador
+  email: me@yoshualopez.com
+  phone: "+593 982 195 208"
+  # Website inferred from email domain, update if necessary
+  website: https://yoshualopez.com
+  social_networks:
+    - network: LinkedIn
+      username: yoshua-lopez # Update with your actual username
+    - network: GitHub
+      username: yoshua-lopez # Update with your actual username
+
+  sections:
+    # Used TextEntry for the profile summary
+    profile:
+      - >-
+          I am a Software Developer with experience in developing web and
+          mobile applications using technologies such as JavaScript and the
+          React framework. I have worked in agile environments, which has
+          allowed me to quickly adapt to changes and deliver high-quality results
+          within tight deadlines.
+
+    # Used ExperienceEntry for employment history
+    employment_history:
+      - company: Idukay
+        position: Full Stack Developer
+        location: Quito, Ecuador
+        start_date: 2022-05
+        end_date: present
+        highlights:
+          - Designing, developing, testing, and implementing software applications.
+          - Analyzing user requirements and designing software solutions, as well as assisting in the resolution of technical issues.
+
+      - company: Badge Go
+        position: Full Stack Developer
+        location: Quito, Ecuador
+        start_date: 2022-04
+        end_date: 2022-06
+        highlights:
+          - Responsible for adding new functionalities to the platform, testing code, ensuring the quality of the product and its workflows.
+          - Developing and managing automated deployment to the cloud.
+
+      - company: Trivo
+        position: Full Stack Developer
+        location: Quito, Ecuador
+        start_date: 2021-07
+        end_date: 2021-10
+        highlights:
+          - Working with technologies such as Node.js, React, and React Native to address user requirements for web and mobile applications.
+          - Responsible for developing and testing code, as well as ensuring the quality of the final product.
+
+      - company: Idukay
+        position: Application Developer (Intern)
+        location: Quito, Ecuador
+        start_date: 2019-08
+        end_date: 2019-12
+        highlights:
+          - Part-time intern developing new required features in the development area, using React Native technology for mobile applications.
+
+    # Used EducationEntry for academic background
+    education:
+      - institution: Holberton School
+        area: AI Developer
+        start_date: 2023-07
+        end_date: present
+      
+      - institution: Holberton School
+        area: Software Developer
+        start_date: 2022-01
+        end_date: 2022-11
+
+    # Used OneLineEntry for compact skills listing
+    skills:
+      - label: Technologies
+        details: JavaScript, React, React Native, Node.js, TDD, CI/CD, Docker, Git, MongoDB
+      - label: Soft Skills
+        details: Problem Solving, Responsibility, Adaptability, Team Work
+      - label: Languages
+        details: English (B2), Spanish (Native)
+
+# Design settings based on documentation default options
+design:
+  theme: moderncv
+  page:
+    size: us-letter
+    top_margin: 2cm
+    bottom_margin: 2cm
+    left_margin: 2cm
+    right_margin: 2cm
+    show_page_numbering: true
+  colors:
+    text: black
+    name: "#004f90"
+    section_titles: "#004f90"
+    links: "#004f90"
+  header:
+    alignment: left
+    name_font_size: 25pt
+  section_titles:
+    type: with-partial-line
+    bold: true
+
+# RenderCV settings for bolding keywords and output config
+rendercv_settings:
+  render_command:
+    output_folder_name: cv_output
+    pdf_path: Yoshua_Lopez_CV.pdf
+  bold_keywords:
+    - React
+    - React Native
+    - JavaScript
+    - Node.js
+    - Docker
+    - Git
+    - MongoDB
+    - CI/CD
