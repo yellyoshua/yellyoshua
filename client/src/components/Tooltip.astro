@@ -1,0 +1,24 @@
+---
+interface Props {
+	tooltip: string;
+}
+
+const {tooltip} = Astro.props;
+---
+
+<div class="group cursor-pointer relative inline-block">
+	<slot />
+	<div
+		class="opacity-0 bg-black text-white text-center text-xs rounded-lg py-2 absolute right-0 z-10 group-hover:opacity-100 transition-all bottom-full px-2 pointer-events-none"
+	>
+		{tooltip}
+		<svg
+			class="absolute text-black h-2 w-full right-0 top-full"
+			x="0px"
+			y="0px"
+			viewBox="0 0 255 255"
+		>
+			<polygon class="fill-current" points="0,0 127.5,127.5 255,0"></polygon>
+		</svg>
+	</div>
+</div>

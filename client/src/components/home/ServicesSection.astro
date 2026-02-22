@@ -1,0 +1,98 @@
+---
+
+import {Globe, Server, Database, Smartphone, Shield, Zap} from 'lucide-react';
+
+const services = [
+	{
+		icon: Globe,
+		title: 'Enterprise Web Development',
+		description: 'Scalable web applications built with modern technologies like React, Vue.js, and Angular. Optimized for high performance and an exceptional user experience.',
+		features: ['SPA & PWA', 'Scalable Architecture', 'SEO Optimized', 'Responsive Design'],
+		color: 'bg-blue-500'
+	},
+	{
+		icon: Server,
+		title: 'Backend & APIs',
+		description: 'Robust RESTful and GraphQL API development. Microservices and serverless architectures for maximum scalability and performance.',
+		features: ['Node.js & Express', 'Microservices', 'CI/CD', 'API Documentation'],
+		color: 'bg-emerald-500'
+	},
+	{
+		icon: Database,
+		title: 'Database Management',
+		description: 'Design and implementation of relational and NoSQL databases, featuring query optimization and horizontal scaling strategies.',
+		features: ['PostgreSQL & MongoDB', 'Optimization', 'Backup & Recovery', 'Cloud Integration'],
+		color: 'bg-purple-500'
+	},
+	{
+		icon: Smartphone,
+		title: 'Mobile App Development',
+		description: 'Native and hybrid mobile app development. Leveraging React Native and Flutter for consistent, cross-platform experiences.',
+		features: ['React Native', 'Flutter', 'App Store Deployment', 'Push Notifications'],
+		color: 'bg-orange-500'
+	},
+	{
+		icon: Shield,
+		title: 'Security & DevOps',
+		description: 'Implementation of security and DevOps best practices, including deployment automation and infrastructure monitoring.',
+		features: ['Docker & Kubernetes', 'AWS/GCP', 'Monitoring'],
+		color: 'bg-red-500'
+	},
+	{
+		icon: Zap,
+		title: 'Technical Consulting',
+		description: 'Expert advice on software architecture and legacy system modernization, complete with code audits and performance optimization.',
+		features: ['Code Review', 'Performance Audit', 'Legacy Migration', 'Team Training'],
+		color: 'bg-amber-500'
+	}
+];
+
+---
+
+<section id="services-section" class="py-24">
+	<div class="mx-auto px-4 sm:px-6 lg:px-8">
+		{/* Header */}
+		<div class="text-center mb-16">
+			<h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+				<span class="bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-400 bg-clip-text text-transparent">
+					Custom Development Services
+				</span>
+			</h2>
+			<p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+				I offer comprehensive solutions to take your idea to the next level, focusing on quality, performance, and scalability.
+			</p>
+		</div>
+
+		{/* Services Grid */}
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{services.map((service) => (
+				<div class="group bg-white dark:bg-slate-800/60 rounded-2xl p-8 shadow-lg transition-all duration-75 border border-slate-100 dark:border-slate-800">
+					{/* Icon */}
+					<div class={`w-14 h-14 ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-150`}>
+						<service.icon className="w-7 h-7 text-white" />
+					</div>
+
+					{/* Title */}
+					<h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-600 transition-colors dark:text-slate-100 dark:group-hover:text-green-400">
+						{service.title}
+					</h3>
+
+					{/* Description */}
+					<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+						{service.description}
+					</p>
+
+					{/* Features */}
+					<div class="space-y-2">
+						{service.features.map((feature) => (
+							<div class="flex items-center text-sm text-slate-500 dark:text-slate-400">
+								<div class="w-1.5 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full mr-3 dark:from-green-400 dark:to-teal-400"></div>
+								{feature}
+							</div>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

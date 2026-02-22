@@ -1,0 +1,84 @@
+---
+import DarkModeSwitch from '../components/DarkModeSwitch.astro';
+import Separator from '../components/Separator.astro';
+import Tooltip from '../components/Tooltip.astro';
+import {COPYRIGHT, SOCIAL_LINKS} from '../constants';
+---
+
+<footer class="pt-10 sm:mt-10">
+	<div>
+		<div class="py-3">
+			<p
+				class="text-center text-black dark:text-white font-bold text-2xl font-arvo antialiased"
+			>
+				Get in touch with me
+			</p>
+		</div>
+
+		<div
+			class="w-full justify-center md:flex-auto md:flex-row-reverse pt-3 pb-7 flex-row flex"
+		>
+			{
+				SOCIAL_LINKS.map((social) => {
+					return (
+						<Tooltip tooltip={social.name}>
+							<a href={social.url} target="_blank" rel="noopener noreferrer">
+								<div class="mx-1 text-center p-2">
+									<social.icon class="w-6 h-6 text-gray-500 hover:text-black dark:hover:text-white transition-all" />
+								</div>
+							</a>
+						</Tooltip>
+					);
+				})
+			}
+		</div>
+	</div>
+
+	<Separator size="50" />
+
+	<div class="flex justify-center">
+		<DarkModeSwitch />
+	</div>
+
+	<div class="py-5 text-center">
+		<p
+			class="italic select-none text-base font-arvo text-black dark:text-white"
+		>
+			&quot;Primero en tu mente, luego en tu realidad&quot; - Julio Verne
+		</p>
+		<p class="text-center text-xs font-arvo text-black dark:text-gray-300">
+			Todo empieza en la mente de alguien.
+		</p>
+	</div>
+
+	<div class="flex justify-center select-none mt-3 mb-8">
+		<a
+			href="https://www.buymeacoffee.com/yellyoshua"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<img
+				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+				alt="Buy Me A Coffee"
+				class="max-w-[174px] w-full"
+			/>
+		</a>
+	</div>
+
+	<div class="my-3 flex justify-center select-none">
+		<a
+			href="/yellyoshua"
+			class="font-arvo border-2 px-2 py-2 font-bold text-gray-500 dark:text-white border-gray-500 hover:border-purple-700 hover:text-purple-700"
+		>
+			@yellyoshua
+		</a>
+	</div>
+
+	<div class="pt-2 pb-4">
+		<p
+			class="text-center text-gray-500 text-xs font-arvo font-light dark:text-white"
+		>
+			© {COPYRIGHT}
+		</p>
+	</div>
+</footer>

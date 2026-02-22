@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import {ClientRouter} from 'astro:transitions';
+import ThemeScript from './ThemeScript.astro';
+import type {Page, Project} from '../interfaces';
+import MainHeader from '../ui/MainHeader.astro';
+import MainFooter from '../ui/MainFooter.astro';
+import ProjectMetaTags from './components/ProjectMetaTags.astro';
+import HomeMetaTags from './components/HomeMetaTags.astro';
+import PageMetaTags from './components/PageMetaTags.astro';
+
+interface Props {
+	project?: Project;
+	page?: Page;
+}
+
+const {project, page} = Astro.props;
+
+const isHomePage = !project && !page;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		{project && <ProjectMetaTags project={project} />}
+		{page && <PageMetaTags page={page} />}
+		{isHomePage && <HomeMetaTags />}
+		<ClientRouter />
+	</head>
+
+	<body
+		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-200"
+	>
+		<MainHeader />
+		<main class="pt-10">
+			<slot />
+		</main>
+		<MainFooter />
+		<ThemeScript />
+	</body>
+</html>
+<style is:global></style>

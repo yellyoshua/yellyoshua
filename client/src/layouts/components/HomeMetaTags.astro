@@ -1,0 +1,21 @@
+---
+import {SHORT_BIO_DESCRIPTION} from '../../constants';
+
+
+const title = 'Yoshua Lopez | Software Engineer | Full Stack Developer';
+const pageUrl = 'https://yoshualopez.com/';
+
+---
+<meta charset="utf8" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="manifest" href="/manifest.json" />
+
+<meta name="description" content={SHORT_BIO_DESCRIPTION} />
+<title>{title}</title>
+
+<meta property="description" content={SHORT_BIO_DESCRIPTION} />
+<meta property="og:image" content="/assets/pictures/yellyoshua.jpg" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={SHORT_BIO_DESCRIPTION} />
+<meta property="og:url" content={pageUrl} />

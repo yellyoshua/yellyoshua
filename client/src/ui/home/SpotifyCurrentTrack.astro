@@ -1,0 +1,31 @@
+---
+import spotifyApi from '../../api/spotify/spotify-api';
+import redisApi from '../../api/redis/redis-api';
+
+const data = await redisApi.json.get('access_token') as any;
+const updatedToken = await spotifyApi.refreshToken(data?.refresh_token);
+await redisApi.json.set('access_token', '$', updatedToken);
+const currentTrack = await spotifyApi.getCurrentTrack(updatedToken.access_token);
+
+---
+{
+	currentTrack && <div class="flex items-center justify-center mt-10">
+		<div class="bg-green-800 p-2 rounded-lg shadow-lg w-full max-w-md">
+			<div class="mb-2 flex items-center justify-between">
+				<p class="text-sm font-bold text-white">What I'm Listening</p>
+
+				<a href={currentTrack.item.external_urls.spotify} target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline cursor-pointer">
+					<img src="/assets/images/spotify-isotipo.png" alt="Spotify Icon" class="inline-block h-6 mr-2" />
+				</a>
+			</div>
+
+			<div class="flex items-center space-x-4">
+				<img src={currentTrack.item.album.images[0].url} alt={currentTrack.item.name} class="w-12 h-12 rounded" />
+				<div class="flex flex-col gap-1">
+					<p class="text-sm font-semibold text-white">{currentTrack.item.name}</p>
+					<p class="text-xs text-gray-200">{currentTrack.item.artists.map((artist) => artist.name).join(', ')}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+}

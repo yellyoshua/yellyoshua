@@ -1,0 +1,40 @@
+---
+interface Props {
+	className: string;
+	content?: string;
+}
+
+const {className, content} = Astro.props;
+---
+
+<div class="bg-white dark:bg-gray-900 transition-colors duration-500 w-full">
+	<article
+		id="markdown-content"
+		class={`prose prose-base md:prose-lg prose-a:break-all wrap-break-word ${className} dark:prose-invert`}
+		set:html={content}
+	/>
+</div>
+
+<script is:inline>
+	const $html = document.documentElement;
+	const $markdown = document.getElementById('markdown-content');
+
+	const observer = new MutationObserver((mutations) => {
+		mutations.forEach((mutation) => {
+			if (mutation.type === 'attributes') {
+				const theme = mutation.target.getAttribute('class');
+
+				if (theme === 'dark') {
+					$markdown.classList.add('prose-dark');
+				} else {
+					$markdown.classList.remove('prose-dark');
+				}
+			}
+		});
+	});
+
+	observer.observe($html, {
+		attributes: true,
+		attributeFilter: ['class'],
+	});
+</script>

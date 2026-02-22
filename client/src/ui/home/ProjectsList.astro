@@ -1,0 +1,22 @@
+---
+import type {Project} from '../../interfaces';
+import ProjectCard from './ProjectCard.astro';
+import projectsApi from '../../api/projects/projects-api';
+
+const projects: Project[] = await projectsApi.getAllProjects();
+
+---
+<section id="projects-section" class="w-full">
+	<div class="text-center max-w-2xl mx-auto py-16">
+		<h2 class="text-4xl md:text-4xl font-bold text-white tracking-tighter">Featured Projects</h2>
+		<p class="text-lg text-slate-400">A selection of my recent work.</p>
+	</div>
+
+	<div class="grid gap-3 mx-3 grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+		{
+			projects.map((project) => {
+				return <ProjectCard project={project} />;
+			})
+		}
+	</div>
+</section>

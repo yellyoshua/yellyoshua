@@ -1,0 +1,63 @@
+---
+import type {Project} from '../../interfaces';
+import ButtonLink from '../../components/ButtonLink.astro';
+import ProjectStatus from '../../components/home/ProjectStatus.astro';
+import Text from '../../components/Text.astro';
+
+interface Props {
+	project: Project;
+}
+
+const {project} = Astro.props;
+---
+
+<div
+	class="relative flex justify-center h-80 rounded-2xl overflow-hidden dark:border-[0.5px] dark:border-[#737373]"
+	transition:name={`project-backdrop-${project.slug}`}
+>
+	{
+		project.backdrop && (
+			<img
+				class="w-full h-80 object-cover"
+				src={project.backdrop.url}
+				alt={project.backdrop.fileName}
+			/>
+		)
+	}
+	<div
+		class="absolute w-full bg-black top-0 left-0 right-0 bottom-0 opacity-80 h-full grid place-items-center sm:my-auto"
+	>
+		<div class="text-center px-6 pt-14 pb-2 w-full">
+			<h1 class="uppercase text-base font-bold font-arvo text-white">
+				{project.title}
+			</h1>
+			<Text
+				class="text-sm text-center break-words px-3 py-3 font-light font-arvo m-auto text-white max-w-[90%]"
+			>
+				{project.description}
+			</Text>
+
+			<ProjectStatus status={project.projectStatus} />
+
+			<div class="flex flex-col">
+				{
+					project.externalLink && (
+						<ButtonLink external to={project.externalLink}>
+							Preview
+						</ButtonLink>
+					)
+				}
+
+				{
+					project.repository && (
+						<ButtonLink external to={project.repository || ''}>
+							Repository
+						</ButtonLink>
+					)
+				}
+
+				<ButtonLink to={`/project/${project.slug}`}> More info</ButtonLink>
+			</div>
+		</div>
+	</div>
+</div>

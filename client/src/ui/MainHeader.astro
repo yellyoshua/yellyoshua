@@ -1,0 +1,132 @@
+---
+import PageLogo from '../components/PageLogo.astro';
+import {Menu, Mail, X} from 'lucide-react';
+
+const links = [
+	{text: 'Services', to: '/#services-section'},
+	{text: 'Projects', to: '/#projects-section'},
+	// {text: 'Blog', to: '/blog'},
+	{text: 'About me', to: '/about-me'},
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-4 z-50 mx-auto w-full max-w-4xl px-4 transition-all duration-300">
+	<div class="relative">
+		<!-- Main Header Bar -->
+		<nav class="flex items-center justify-between px-5 py-3 rounded-full bg-white/80 dark:bg-gray-900/80 shadow-sm border border-gray-200 dark:border-gray-800 backdrop-blur-md relative z-20">
+			
+			<!-- Logo -->
+			<a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+				<PageLogo />
+			</a>
+
+			<!-- Desktop Links -->
+			<div class="hidden md:flex items-center gap-1">
+				{
+					links.map((link) => (
+						<a href={link.to} class:list={[
+							'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
+							link.to === currentPath 
+								? 'text-black dark:text-white bg-gray-100 dark:bg-gray-800' 
+								: 'text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50'
+						]}>
+							{link.text}
+						</a>
+					))
+				}
+			</div>
+
+			<!-- Actions -->
+			<div class="flex items-center gap-3">
+				<a href="/contact" class="hidden md:flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 font-semibold text-white dark:text-slate-950 px-5 py-2 rounded-full transition-all hover:scale-105 active:scale-95">
+					<Mail className="w-4 h-4" />
+					<span>Contact</span>
+				</a>
+				
+				<!-- Mobile Hamburger Button -->
+				<button id="mobile-menu-btn" class="relative md:hidden flex items-center justify-center p-2 rounded-full text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle menu">
+					<Menu id="menu-icon-open" className="w-5 h-5 transition-all duration-300" />
+					<X id="menu-icon-close" className="w-5 h-5 absolute opacity-0 rotate-90 scale-50 transition-all duration-300" />
+				</button>
+			</div>
+		</nav>
+
+		<!-- Mobile Menu Dropdown -->
+		<div id="mobile-menu" class="absolute top-[calc(100%+0.5rem)] left-0 right-0 p-4 rounded-3xl bg-white/95 dark:bg-gray-900/95 shadow-xl border border-gray-200 dark:border-gray-800 backdrop-blur-xl transition-all duration-300 origin-top opacity-0 -translate-y-2.5 pointer-events-none flex flex-col gap-2 z-10 md:hidden">
+			{
+				links.map((link) => (
+					<a href={link.to} class:list={[
+						'mobile-link px-4 py-3 rounded-2xl text-base font-medium transition-colors',
+						link.to === currentPath
+							? 'text-black dark:text-white bg-gray-100 dark:bg-gray-800'
+							: 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:text-black dark:hover:text-white'
+					]}>
+						{link.text}
+					</a>
+				))
+			}
+			<a href="/contact" class="mobile-link mt-2 flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white dark:text-slate-950 font-semibold px-5 py-3 rounded-2xl transition-all active:scale-95">
+				<Mail className="w-5 h-5" />
+				<span>Contact Me</span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<script is:inline>
+	document.addEventListener('astro:page-load', () => {
+		const btn = document.getElementById('mobile-menu-btn');
+		const menu = document.getElementById('mobile-menu');
+		const iconOpen = document.getElementById('menu-icon-open');
+		const iconClose = document.getElementById('menu-icon-close');
+		const mobileLinks = document.querySelectorAll('.mobile-link');
+
+		if (!btn || !menu || !iconOpen || !iconClose) return;
+
+		const toggleMenu = () => {
+			const isClosed = menu.classList.contains('opacity-0');
+			
+			if (isClosed) {
+				// Abrir menú
+				menu.classList.remove('opacity-0', '-translate-y-2.5', 'pointer-events-none');
+				menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+				
+				// Animar el ícono hacia la 'X'
+				iconOpen.classList.add('opacity-0', '-rotate-90', 'scale-50');
+				iconClose.classList.remove('opacity-0', 'rotate-90', 'scale-50');
+			} else {
+				// Cerrar menú
+				menu.classList.add('opacity-0', '-translate-y-2.5', 'pointer-events-none');
+				menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+				
+				// Restaurar a ícono 'Menu'
+				iconOpen.classList.remove('opacity-0', '-rotate-90', 'scale-50');
+				iconClose.classList.add('opacity-0', 'rotate-90', 'scale-50');
+			}
+		};
+
+		// Limpieza en reinicios por transiciones de Astro (sustituye nodos para purgar event listeners)
+		const newBtn = btn.cloneNode(true);
+		btn.parentNode.replaceChild(newBtn, btn);
+		newBtn.addEventListener('click', toggleMenu);
+
+		mobileLinks.forEach((link) => {
+			link.addEventListener('click', () => {
+				if (!menu.classList.contains('opacity-0')) toggleMenu();
+			});
+		});
+
+		// Manejo del click fuera del menú
+		const handleOutsideClick = (e) => {
+			if (!menu.classList.contains('opacity-0') && !newBtn.contains(e.target) && !menu.contains(e.target)) {
+				toggleMenu();
+			}
+		};
+
+		document.removeEventListener('click', window.mobileMenuOutsideClick);
+		window.mobileMenuOutsideClick = handleOutsideClick;
+		document.addEventListener('click', window.mobileMenuOutsideClick);
+	});
+</script>

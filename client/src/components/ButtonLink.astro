@@ -1,0 +1,39 @@
+---
+import ExternalLinkIcon from '../assets/ExternalLinkIcon.astro';
+
+type Props = {
+	to: string;
+	external?: boolean;
+};
+
+const props = Astro.props;
+---
+
+{
+	props.external && (
+		<a
+			data-astro-prefetch
+			rel="noopener noreferrer"
+			target="_blank"
+			href={props.to}
+			class="duration-200 px-3 my-1 m-auto w-2/4 uppercase font-semibold border-2 border-white text-white hover:bg-white hover:text-black"
+		>
+			<div class="flex items-center justify-center font-arvo text-sm py-[2px] m-0">
+				<ExternalLinkIcon class="mx-1 w-5" />
+				<slot />
+			</div>
+		</a>
+	)
+}
+
+{
+	!props.external && (
+		<a
+			data-astro-prefetch
+			href={props.to}
+			class="duration-200 px-3 my-1 m-auto w-2/4 uppercase font-semibold border-2 border-white text-white hover:bg-white hover:text-black font-arvo text-sm py-[2px]"
+		>
+			<slot />
+		</a>
+	)
+}

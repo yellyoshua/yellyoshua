@@ -1,0 +1,35 @@
+---
+import pagesApi from '../../api/pages/pages-api';
+import getReadTime from '../../utils/getReadTime';
+import PageHeader from '../../ui/page/PageHeader.astro';
+import RenderMarkdown from '../../components/RenderMarkdown.astro';
+import SuggestedPages from '../../ui/page/SuggestedPages.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+	const pages = await pagesApi.getPagesSlug();
+
+	return pages.map((page) => ({params: {slug: page.slug}}));
+}
+
+const {slug} = Astro.params;
+
+const page = await pagesApi.getPageBySlug(slug);
+
+const content = page.content?.html || '';
+const readTime = getReadTime(content);
+
+// Set Cache-Control headers for CDN caching
+// Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
+---
+
+<MainLayout page={page}>
+	<PageHeader page={page} readTime={readTime} />
+	<RenderMarkdown
+		className="mx-auto px-5 sm:px-12 py-5"
+		content={content}
+	/>
+	<SuggestedPages slug={slug} />
+</MainLayout>

@@ -1,0 +1,19 @@
+---
+import IconText from '../IconText.astro';
+
+interface Props {
+	label: string;
+}
+
+const {label} = Astro.props;
+---
+
+<div
+	class="flex items-center justify-center flex-col text-sm text-black dark:text-white"
+>
+	<IconText className="text-black dark:text-white">
+		<slot name="icon" slot="icon" />
+		<strong class="dark:text-white">{label} </strong>
+	</IconText>
+	<slot name="content"/>
+</div>

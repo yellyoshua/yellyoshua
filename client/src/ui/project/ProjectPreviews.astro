@@ -1,0 +1,42 @@
+---
+import type {Project} from '../../interfaces';
+
+interface Props {
+	project: Project;
+}
+
+const {project} = Astro.props;
+const previews = project.previews;
+
+---
+
+<section class="relative px-2 py-10 md:py-20 m-auto">
+	<div class="max-w-7xl mx-auto px-5 sm:px-12">
+		<div class="flex flex-col gap-5">
+			<div class="flex flex-col gap-2">
+				<h2 class="text-2xl md:text-3xl font-arvo font-bold tracking-tight text-black dark:text-white">
+					A Closer Look
+				</h2>
+				<p class="text-base md:text-lg text-gray-700 dark:text-gray-300">
+					Explore the design details, interface, and key capabilities that bring this project to life. Swipe through to see it in action.
+				</p>
+			</div>
+
+			<div class="flex gap-4 overflow-x-auto snap-x snap-mandatory py-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+				{
+					previews.map((preview) => (
+						<img
+							src={preview.url}
+							alt={preview.fileName || 'Preview'}
+							width={preview.width}
+							height={preview.height}
+							class="snap-center shrink-0 w-[85%] sm:w-[70%] md:w-[50%] lg:w-[40%] h-auto rounded-2xl object-cover shadow-lg border border-black/10 dark:border-white/10 hover:scale-[1.02] transition-transform duration-300"
+							loading="lazy"
+							decoding="async"
+						/>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>

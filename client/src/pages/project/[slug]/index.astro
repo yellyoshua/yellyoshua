@@ -1,0 +1,34 @@
+---
+import projectsApi from '../../../api/projects/projects-api';
+import RenderMarkdown from '../../../components/RenderMarkdown.astro';
+import ProjectHeader from '../../../ui/project/ProjectHeader.astro';
+import ProjectPreviews from '../../../ui/project/ProjectPreviews.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import SuggestedPages from '../../../ui/page/SuggestedPages.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+	const projects = await projectsApi.getProjectsSlug();
+
+	return projects.map((project) => ({params: {slug: project.slug}}));
+}
+
+const {slug} = Astro.params;
+
+const project = await projectsApi.getProjectBySlug(slug);
+const hasPreviews = Boolean(project.previews.length);
+
+// Set Cache-Control headers for CDN caching
+// Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
+---
+
+<MainLayout project={project}>
+	<ProjectHeader project={project} />
+	<RenderMarkdown
+		className="mx-auto px-5 sm:px-12 py-5"
+		content={project.content?.html}
+	/>
+	{hasPreviews && <ProjectPreviews project={project} />}
+	<SuggestedPages limit={3} />
+</MainLayout>
