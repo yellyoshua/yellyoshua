@@ -32,7 +32,9 @@ const isHomePage = !project && !page;
 		class="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-200"
 	>
 		<MainHeader />
-		<slot />
+		<main class="pt-10">
+			<slot />
+		</main>
 		<MainFooter />
 		<ThemeScript />
 	</body>

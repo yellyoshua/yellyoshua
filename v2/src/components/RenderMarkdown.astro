@@ -4,13 +4,13 @@ interface Props {
 	content?: string;
 }
 
-const { className, content } = Astro.props;
+const {className, content} = Astro.props;
 ---
 
 <div class="bg-white dark:bg-gray-900 transition-colors duration-500 w-full">
 	<article
 		id="markdown-content"
-		class={`prose prose-xl md:prose-lg ${className} dark:prose-invert`}
+		class={`prose prose-base md:prose-lg prose-a:break-all wrap-break-word ${className} dark:prose-invert`}
 		set:html={content}
 	/>
 </div>
