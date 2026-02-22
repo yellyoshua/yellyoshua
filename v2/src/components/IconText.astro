@@ -5,12 +5,12 @@ interface Props {
 	className?: string;
 }
 
-const { noMargin, right, className } = Astro.props;
+const {noMargin, right, className} = Astro.props;
 ---
 <div
 	class:list={[
 		'flex items-center',
-		{ 'my-3': !noMargin },
+		{'my-3': !noMargin},
 		'max-w-xs',
 	]}
 >

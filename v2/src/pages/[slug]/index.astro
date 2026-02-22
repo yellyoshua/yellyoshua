@@ -11,10 +11,10 @@ export const prerender = true;
 export async function getStaticPaths() {
 	const pages = await pagesApi.getPagesSlug();
 
-	return pages.map((page) => ({ params: { slug: page.slug } }));
+	return pages.map((page) => ({params: {slug: page.slug}}));
 }
 
-const { slug } = Astro.params;
+const {slug} = Astro.params;
 
 const page = await pagesApi.getPageBySlug(slug);
 
@@ -32,4 +32,4 @@ const readTime = getReadTime(content);
 		content={content}
 	/>
 	<SuggestedPages slug={slug} />
-</M>
+</MainLayout>

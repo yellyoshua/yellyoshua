@@ -1,5 +1,5 @@
 ---
-import type { Page } from '../../interfaces';
+import type {Page} from '../../interfaces';
 import BoxLabel from '../../components/page/BoxLabel.astro';
 import CalendarIcon from '../../assets/CalendarIcon.astro';
 import ClockIcon from '../../assets/ClockIcon.astro';
@@ -19,14 +19,14 @@ interface Props {
 	readTime: string;
 }
 
-const { page, readTime } = Astro.props;
+const {page, readTime} = Astro.props;
 
 const updatedAtText = page.updatedAt
-	? dayjs(page.updatedAt, { locale: 'en' }).format('DD MMMM YYYY')
+	? dayjs(page.updatedAt, {locale: 'en'}).format('DD MMMM YYYY')
 	: '--';
 
 const createdAtText = page.createdAt
-	? dayjs(page.createdAt, { locale: 'en' }).format('DD MMMM YYYY')
+	? dayjs(page.createdAt, {locale: 'en'}).format('DD MMMM YYYY')
 	: '--';
 
 const getTimeAgo = (dateForTimeAgo: string) => {

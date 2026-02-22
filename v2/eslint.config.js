@@ -5,6 +5,7 @@ import {defineConfig} from 'eslint/config';
 export default defineConfig([
 	// add more generic rule sets here, such as:
 	// js.configs.recommended,
+	{ignores: ['.vercel/*', '.astro/*', 'node_modules/*', 'dist/*', '.git/*', '.idea/*', '.vscode/*', '.DS_Store']},
 	...eslintPluginAstro.configs.recommended,
 	{
 		plugins: {
