@@ -17,6 +17,7 @@ export async function getStaticPaths() {
 const {slug} = Astro.params;
 
 const project = await projectsApi.getProjectBySlug(slug);
+const hasPreviews = Boolean(project.previews.length);
 
 // Set Cache-Control headers for CDN caching
 // Astro.response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
@@ -28,6 +29,6 @@ const project = await projectsApi.getProjectBySlug(slug);
 		className="mx-auto px-5 sm:px-12 py-5"
 		content={project.content?.html}
 	/>
-	{project.previews.length && <ProjectPreviews project={project} />}
-	<SuggestedPages disableHintText={true} limit={3} />
+	{hasPreviews && <ProjectPreviews project={project} />}
+	<SuggestedPages limit={3} />
 </MainLayout>
