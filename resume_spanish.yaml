@@ -1,0 +1,156 @@
+cv:
+  name: Yoshua Lopez
+  location: Quito, Ecuador
+  email: me@yoshualopez.com
+  phone: "+593 982 195 208"
+  website: https://yoshualopez.com
+  social_networks:
+    - network: LinkedIn
+      username: yoshua-lopez
+    - network: GitHub
+      username: yoshua-lopez
+
+  sections:
+    # Seccion de texto para el perfil profesional
+    perfil_profesional:
+      - >-
+          Soy Desarrollador de Software, tengo experiencia en el desarrollo de
+          aplicaciones web y móviles utilizando tecnologías como JavaScript y
+          el framework React. He trabajado en entornos ágiles, lo que me ha
+          permitido adaptarme rápidamente a los cambios y entregar resultados
+          de alta calidad en plazos ajustados.
+
+    experiencia_laboral:
+      - company: Idukay
+        position: Desarrollador Full Stack
+        location: Quito
+        start_date: 2022-05
+        end_date: present
+        highlights:
+          - Diseñar, desarrollar, probar e implementar aplicaciones de software.
+          - Analizar los requisitos de los usuarios y diseñar soluciones de software, además de ayudar en la resolución de problemas técnicos.
+
+      - company: Badge Go
+        position: Desarrollador Full Stack
+        location: Quito
+        start_date: 2022-04
+        end_date: 2022-06
+        highlights:
+          - Encargado de agregar nuevas funcionalidades a la plataforma así como probar código, asegurar la calidad del producto y sus flujos.
+          - Elaborar y administrar el despliegue automatizado a la nube.
+
+      - company: Trivo
+        position: Desarrollador Full Stack
+        location: Quito
+        start_date: 2021-07
+        end_date: 2021-10
+        highlights:
+          - Trabajar con tecnologías como Nodejs, React y React Native para resolver los requisitos de los usuarios para aplicativo web y móvil.
+          - Responsable de desarrollar y probar el código, así como de asegurar la calidad del producto final.
+
+      - company: Idukay
+        position: Desarrollador de aplicaciones (Pasante)
+        location: Quito
+        start_date: 2019-08
+        end_date: 2019-12
+        highlights:
+          - Pasante de medio tiempo desarrollando nuevas características requeridas en el área de desarrollo, con tecnología React Native para aplicaciones móviles.
+
+    formación:
+      - institution: Holberton School
+        area: Artificial Intelligence Developer
+        start_date: 2023-07
+        end_date: 2024-07
+      
+      - institution: Holberton School
+        area: Software Developer
+        start_date: 2022-01
+        end_date: 2022-11
+
+    competencias:
+      - label: Tecnologías
+        details: JavaScript, Reactjs, Nodejs, TDD, CI/CD, Docker, Git, MongoDB
+      - label: Habilidades Blandas
+        details: Resolución de problemas, Responsabilidad, Adaptabilidad, Trabajo en Equipo
+      - label: Idiomas
+        details: Inglés (B2), Español (Nativo)
+
+    cursos:
+      - name: Google Kubernetes Engine
+        location: Platzi
+        date: 2021-03
+        summary: Certificación de finalización de curso.
+
+# Configuración visual detallada basada en la documentación (Páginas 15-16)
+design:
+  theme: moderncv
+  page:
+    size: us-letter
+    top_margin: 2cm
+    bottom_margin: 2cm
+    left_margin: 2cm
+    right_margin: 2cm
+    show_page_numbering: true
+    show_last_updated_date: false
+  colors:
+    name: "#004f90"
+    section_titles: "#004f90"
+    links: "#004f90"
+  header:
+    alignment: left
+    name_font_size: 25pt
+  section_titles:
+    type: with-partial-line
+    bold: true
+
+# Configuración de idioma para que las fechas salgan en Español (Página 17)
+locale:
+  language: es
+  date_template: MONTH_ABBREVIATION YEAR
+  month: mes
+  months: meses
+  year: año
+  years: años
+  present: Presente
+  to: "-"
+  abbreviations_for_months:
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Sept
+    - Oct
+    - Nov
+    - Dic
+  full_names_of_months:
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+
+# Ajustes generales de RenderCV (Página 18)
+rendercv_settings:
+  render_command:
+    output_folder_name: cv_output
+    pdf_path: Yoshua_Lopez_CV.pdf
+  bold_keywords:
+    - React
+    - React Native
+    - JavaScript
+    - Nodejs
+    - Docker
+    - Git
+    - MongoDB
+    - CI/CD
