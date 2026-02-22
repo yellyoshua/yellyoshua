@@ -11,10 +11,9 @@ export const prerender = true;
 
 <MainLayout>
 	<section id="hero" class="relative py-20 min-h-screen md:py-32">
-		<div class="absolute inset-0 z-0">
-			<Particles client:load />
-		</div>
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+		<Particles client:load />
+
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
 			<span class="inline-block mb-4 bg-emerald-100 text-emerald-800 border-emerald-200  dark:bg-emerald-500/10 dark:text-emerald-400 px-4 py-1.5 rounded-full text-sm font-semibold border dark:border-emerald-500/30">
 				Full-Stack Developer & SEO Specialist
 			</span>
@@ -41,6 +40,8 @@ export const prerender = true;
 	<ServicesSection />
 
 	<ProjectsList />
+
+	<!-- TODO: Add blog section -->
 	<!-- <h3 class="text-center text-2xl font-arvo text-black dark:text-white mt-10 mb-5 italic">
 		Feel free to explore and discover more about my journey <br/> through technology and life.
 	</h3>
@@ -48,6 +49,7 @@ export const prerender = true;
 	<p class="text-center text-gray-500 dark:text-gray-400 mb-10">
 		Some of my recent writings and thoughts are shared below.
 	</p> -->
+
 	<div class="py-24">
 		<div class="text-center max-w-2xl mx-auto">
 			<h2 class="text-3xl md:text-4xl font-bold text-white tracking-tighter">My Journey & Knowledge</h2>
@@ -56,5 +58,6 @@ export const prerender = true;
 			</p>
 		</div>
 	</div>
+
 	<SuggestedPages disableHintText={true} limit={6} />
 </MainLayout>

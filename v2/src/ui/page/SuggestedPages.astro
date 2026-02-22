@@ -9,19 +9,19 @@ interface Props {
 	limit?: number;
 	disableHintText?: boolean;
 }
-const { slug, limit, disableHintText } = Astro.props;
+const {slug, limit, disableHintText} = Astro.props;
 
 const pages = await pagesApi.getPagesRecommendation(slug ?? '', limit);
 const showHintText = !disableHintText;
 
 ---
 
-<div class="mx-auto px-5 py-5" style={{ maxWidth: 800 }}>
+<div class="mx-auto px-5 py-5" style={{maxWidth: 800}}>
 	{ showHintText && (
 		<h4 class="text-base font-arvo text-black dark:text-white">
 			You may also like:
 		</h4>
-		)
+	)
 	}
 	<div
 		class="py-3 grid gap-5 grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -29,7 +29,7 @@ const showHintText = !disableHintText;
 		{
 			pages.map((page) => {
 				const updatedAtText = page.updatedAt
-					? dayjs(page.updatedAt, { locale: 'en' }).format('DD MMMM YYYY')
+					? dayjs(page.updatedAt, {locale: 'en'}).format('DD MMMM YYYY')
 					: '--';
 
 				return (

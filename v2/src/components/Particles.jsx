@@ -23,7 +23,7 @@ export default function Particles() {
     window.addEventListener('resize', resizeCanvas)
 
     const particles = []
-    const particleCount = 60
+    const particleCount = 100
     const maxDistance = 120
 
     for (let i = 0; i < particleCount; i++) {
@@ -80,5 +80,5 @@ export default function Particles() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+  return <canvas ref={canvasRef} className="overflow-hidden pointer-events-none absolute inset-0 w-full h-full" />
 }

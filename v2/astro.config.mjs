@@ -28,7 +28,14 @@ export default defineConfig({
 		enabled: false,
 	},
 
-	adapter: vercel(),
+	adapter: vercel({
+		webAnalytics: {
+			enabled: true
+		},
+		isr: {
+			expiration: 60 * 60 * 24 // 1 day
+		}
+	}),
 
 	env: {
 		schema: {
