@@ -1,19 +1,11 @@
-import { SocialLink, Asset } from './interfaces';
-
-export interface ApplicationReducer {
-	name: string;
-	API_URL?: string;
-	socialLinks: SocialLink[];
-	copyright: string;
-	projects: Project[];
-}
+import type { Asset } from './interfaces';
 
 export interface Project {
 	id: string;
 	title: string;
 	slug: string;
 	description: string;
-	projectStatus:  'forgotten' | 'development' | 'production' | 'archived';
+	projectStatus: 'forgotten' | 'development' | 'production' | 'archived';
 	content: { html?: string } | null;
 	externalLink: string | null;
 	backdrop: Asset | null;

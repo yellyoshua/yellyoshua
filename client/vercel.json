@@ -1,11 +1,5 @@
 {
-	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"cleanUrls": true,
-	"trailingSlash": false,
-	"functions": {
-		"pages/api/ping.ts": {
-			"memory": 128,
-			"maxDuration": 5
-		}
-	}
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "bun install",
+  "buildCommand": "bun run build"
 }

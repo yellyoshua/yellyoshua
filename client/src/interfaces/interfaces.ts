@@ -16,12 +16,6 @@ export interface Asset {
 	fileName: string;
 }
 
-export interface SocialLink {
-	name: string;
-	icon: (props: React.ComponentProps<'svg'>) => JSX.Element;
-	url: string;
-}
-
 export interface Message {
 	date: string | Date;
 	author: string;
