@@ -22,7 +22,7 @@ cv:
 
     experiencia_laboral:
       - company: Idukay
-        position: Desarrollador Full Stack
+        position: Sr. Full Stack Developer
         location: Quito
         start_date: 2022-05
         end_date: present
@@ -69,7 +69,7 @@ cv:
 
     competencias:
       - label: Tecnologías
-        details: JavaScript, Reactjs, Nodejs, TDD, CI/CD, Docker, Git, MongoDB
+        details: JavaScript, Reactjs, Nodejs, TDD, CI/CD, Docker, Git, MongoDB, PostgreSQL, AWS, GCP
       - label: Habilidades Blandas
         details: Resolución de problemas, Responsabilidad, Adaptabilidad, Trabajo en Equipo
       - label: Idiomas
@@ -90,61 +90,32 @@ design:
     bottom_margin: 2cm
     left_margin: 2cm
     right_margin: 2cm
-    show_page_numbering: true
-    show_last_updated_date: false
+    show_footer: true
+    show_top_note: false
   colors:
     name: "#004f90"
     section_titles: "#004f90"
     links: "#004f90"
+  typography:
+    font_size:
+      name: 25pt
+    bold:
+      section_titles: true
   header:
     alignment: left
-    name_font_size: 25pt
   section_titles:
-    type: with-partial-line
-    bold: true
+    type: with_partial_line
 
 # Configuración de idioma para que las fechas salgan en Español (Página 17)
 locale:
-  language: es
-  date_template: MONTH_ABBREVIATION YEAR
-  month: mes
-  months: meses
-  year: año
-  years: años
+  language: spanish
   present: Presente
-  to: "-"
-  abbreviations_for_months:
-    - Ene
-    - Feb
-    - Mar
-    - Abr
-    - May
-    - Jun
-    - Jul
-    - Ago
-    - Sept
-    - Oct
-    - Nov
-    - Dic
-  full_names_of_months:
-    - Enero
-    - Febrero
-    - Marzo
-    - Abril
-    - Mayo
-    - Junio
-    - Julio
-    - Agosto
-    - Septiembre
-    - Octubre
-    - Noviembre
-    - Diciembre
 
 # Ajustes generales de RenderCV (Página 18)
-rendercv_settings:
+settings:
   render_command:
-    output_folder_name: cv_output
-    pdf_path: Yoshua_Lopez_CV.pdf
+    output_folder: cv_output
+    pdf_path: OUTPUT_FOLDER/resume-spanish-rendercv.pdf
   bold_keywords:
     - React
     - React Native
@@ -153,4 +124,7 @@ rendercv_settings:
     - Docker
     - Git
     - MongoDB
+    - PostgreSQL
+    - AWS
+    - GCP
     - CI/CD
