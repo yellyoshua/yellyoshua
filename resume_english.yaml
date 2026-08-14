@@ -24,7 +24,7 @@ cv:
     # Used ExperienceEntry for employment history
     employment_history:
       - company: Idukay
-        position: Full Stack Developer
+        position: Sr. Full Stack Developer
         location: Quito, Ecuador
         start_date: 2022-05
         end_date: present
@@ -73,7 +73,7 @@ cv:
     # Used OneLineEntry for compact skills listing
     skills:
       - label: Technologies
-        details: JavaScript, React, React Native, Node.js, TDD, CI/CD, Docker, Git, MongoDB
+        details: JavaScript, React, React Native, Node.js, TDD, CI/CD, Docker, Git, MongoDB, PostgreSQL, AWS, GCP
       - label: Soft Skills
         details: Problem Solving, Responsibility, Adaptability, Team Work
       - label: Languages
@@ -88,24 +88,28 @@ design:
     bottom_margin: 2cm
     left_margin: 2cm
     right_margin: 2cm
-    show_page_numbering: true
+    show_footer: true
+    show_top_note: false
   colors:
-    text: black
+    body: "#000000"
     name: "#004f90"
     section_titles: "#004f90"
     links: "#004f90"
+  typography:
+    font_size:
+      name: 25pt
+    bold:
+      section_titles: true
   header:
     alignment: left
-    name_font_size: 25pt
   section_titles:
-    type: with-partial-line
-    bold: true
+    type: with_partial_line
 
 # RenderCV settings for bolding keywords and output config
-rendercv_settings:
+settings:
   render_command:
-    output_folder_name: cv_output
-    pdf_path: Yoshua_Lopez_CV.pdf
+    output_folder: cv_output
+    pdf_path: OUTPUT_FOLDER/resume-english-rendercv.pdf
   bold_keywords:
     - React
     - React Native
@@ -114,4 +118,7 @@ rendercv_settings:
     - Docker
     - Git
     - MongoDB
+    - PostgreSQL
+    - AWS
+    - GCP
     - CI/CD
